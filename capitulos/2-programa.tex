@@ -1,0 +1,39 @@
+\chapter{Programa de Clusterização de Análise Genômica}
+\label{cap:PROGRAMA}
+
+Tendo em vista o progresso nos estudos de Bioinformática e a busca por melhoria, mais especificamente, nas análises genômicas de \textit{DNA}, em sua tese, Eduardo Andreetta Fontana desenvolveu uma ferramenta que aplica os conceitos de clusterização na análise genômica da bactéria \textit{Escherichia Coli} (\textit{E. coli}) diferenciando regiões promotoras, terminadoras e do gene propriamente dito. Na mesma, o autor desenvolve os algoritmos \textit{K-Means} e \textit{CURE} (\textit{Clustering Using Representatives}) e usa como base de dados o banco de dados público \textit{RegulonDB}\cite{Fontana:2013:UCS}.
+
+No final de seus estudos, Fontana concluiu que teve resultados relevantes para vetores de 2\(\mathit{n}\) e 3\(\mathit{n}\) sendo que sua proposta era clusterizar todos os segmentos em vetores de 2\(\mathit{n}\) até 10\(\mathit{n}\) mas nesses últimos casos a ferramenta mostrou tempo de execução além da viabilidade aceitável. Tal resultado foi atribuído a natureza complexa e ruidosa da representação dos dados biológicos\cite{Fontana:2013:UCS}.
+
+O autor visionou a necessidade de enfoque na exploração da fase de extração de atributos já que a mesma é determinante para a definição dos atributos característicos de qualquer objeto de estudo, Fontana sugeriu estudos utilizando a teoria de \textit{ATE} (\textit{Automatic Term Expansion}) \cite{Ji:2008} para a contabilização de frequência de termos, além disso sugeriu outros complementos como gráficos de dendrograma para representações \textit{CURE}, erro quadrático para \textit{K-Means} e alinhamentos de sequência para cada \textit{cluster}\cite{Fontana:2013:UCS}.
+
+Dois anos mais tarde Thiago Angelo Basso realizou em sua tese o estudo focado na fase de seleção e extração de atributos suavizando os ruídos até então constatados e implementando os mesmos na ferramenta desenvolvida por Fontana, significando um complemento no estudo das expressões genicas com algoritmos de clusterização. \cite{Basso:2015:UCS}.
+
+Foi constatado que a abordagem \textit{ATE} elevou os pesos dos atributos com maior grau de correlação entre as sequências mas que não influenciou na etapa de clusterização, com a abordagem \textit{MUSA}\cite{Mendes2006} constatou que a mesma é eficiente na identificação de motivos mas por gerar um esforço computacional grande não é uma boa escolha para a seleção de centroides iniciais. já na fase de extração o autor propôs uma solução em séries temporais utilizando \textit{DWT}\cite{Batal2009} e verificou que a abordagem foi satisfatória já que foi possível suavizar as series temporais e assim melhorar consideravelmente o agrupamento dos \textit{clusters} na fase de clusterização\cite{Basso:2015:UCS}.
+
+Com a ideia de progredir os estudos da análise genômica Basso propôs otimizações no algoritmo \textit{MUSA}, técnicas de extração de atributos também foram sugeridas, como por exemplo o algoritmo \textit{HGKA} afim de eliminar a dependência de inicialização\cite{Basso:2015:UCS}.
+
+Hoje a ferramenta é amplamente usada pela comunidade acadêmica da Universidade de Caxias do Sul e, graças as pesquisas descritas anteriormente, os alunos de graduação em Biologia que atuam como bolsistas de iniciação científica realizam as pesquisas de expressões genômicas de uma forma mais ágil que as abordagens tradicionais.
+ 
+%verificar referencias para HGKA
+%apresentar tabelas de resultados de cada um deles?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
