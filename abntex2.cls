@@ -1127,4 +1127,4 @@
      \imprimirfolhaderostonostar
 }
 \makeatother
-% ---
+
