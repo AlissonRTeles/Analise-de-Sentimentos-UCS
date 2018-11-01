@@ -30,14 +30,14 @@ Geralmente as APIs são \textit{web services} (produtos disponibilizados na inte
 \label{fig:GraphAPIExplorer}
 \end{figure}
 
-\subsection{Pré-Processamento dos Dados}
+\subsection{Pré-processamento dos Dados}
 \label{subsec:preproc}
 
 Após a coleta e armazenagem dos dados, é necessário a remoção de informações desnecessárias, a padronização do formato dos dados obtidos e a apresentação dos dados que serão, posteriormente, processados pelos algoritmos de extração de conhecimento. O pré-processamento inicia com a separação das frases em listas de palavras agora chamadas de \textit{tokens} que serão processadas até transformar o conteúdo inicial em sua forma reduzida e otimizada.\cite{SYMEONIDIS2018298}. É importante considerar que as técnicas de pré-processamento são utilizadas conforme a fonte de dados e também dos termos de interesse que serão buscados, assim como o idioma dos textos que se quer analisar. 
 
 A seguir serão apresentadas as principais técnicas de pré-processamento textual conforme levantado pelos autores \citeonline{SYMEONIDIS2018298} sendo apresentadas em ordem de importância para um melhor resultado, tendo ganho de performance já que é possível a execução em paralelo entre as combinações de algumas técnicas.Também são citados alguns trabalhos que tratam cada uma das técnicas descritas.
 
-\begin{enumerate}
+\begin{enumerate}[label=\Alph*]
 \item Remoção de \textit{unicode} e ruídos: Como nem todos os \textit{datasets} tem um tratamento prévio disponibilizado pelas ferramentas de coleta, é necessário um primeiro tratamento do seu conteúdo. Essa tarefa consiste em remover códigos \textit{unicode}\footnote{ Padrão internacional de códigos que permite que qualquer computador seja capaz de interpretar qualquer sistema de escrita\cite{0321480910}.} indesejados   como "\textbackslash u002c" e "\textbackslash x06". Essa é a primeira tarefa e também o ponto de partida para as demais tarefas de pré-processamento \cite{SYMEONIDIS2018298}.
 
 \item Substituição de \textit{URL} e menções de usuários: A maioria dos conteúdos textuais em redes sociais contém \textit{URLs}, menções de usuário e \textit{tags} (sendo chamadas no \textit{Twitter} de \textit{hashtag}). Como esses conteúdos não apresentam nenhum conteúdo semântico e não expressam nenhum sentimento essa etapa tem por objetivo a remoção total ou substituição por um \textit{token} universal dentro do universo possível \cite{Khan2014}.
@@ -281,10 +281,19 @@ Após definir os grupos de coleta, os dados de coleta para a análise de sentime
   \legend{Fonte: \citeauthor{tccfilipe}}
 \end{table}
 
-Ao final dos estudos foi concluído que a ferramenta desenvolvida trouxe resultados satisfatórios tanto pelos resultados obtidos como pela facilidade que a ferramenta desenvolvida trás para os usuários comuns. Ainda, foram apontadas melhorias para os estudos futuros entre elas o desenvolvimento de uma plataforma \textit{web}, aprimoramento nos testes de resultados da análise de sentimentos e também novas abordagens na etapa de classificação dos dados. É a partir dessas necessidades que o presente trabalho se desenvolverá ... 
+Ao final dos estudos foi concluído que a ferramenta desenvolvida trouxe resultados satisfatórios tanto pelos resultados obtidos como pela facilidade que a ferramenta desenvolvida trás para os usuários comuns. Ainda, foram apontadas melhorias para os estudos futuros entre elas o desenvolvimento de uma plataforma \textit{web}, aprimoramento nos testes de resultados da análise de sentimentos e também novas abordagens na etapa de classificação dos dados. 
 
 % falar aqui sobre os resultados encontrados pelo filipe
-\section{Estado da Arte da Análise de Sentimentos}
-Texto
+% \section{Estado da Arte da Análise de Sentimentos}
+% Nessa sub-sessão será apresentado o estado da arte da Análise de Sentimentos 
 
-\section{Considerações Finais}
+% Para realizar a pesquisa do estado da arte da análise de sentimentos baseada em emoções nas redes sociais foi utilizado a plataforma de pesquisa desenvolvida pela editora \textit{Elsevier} chamada de \textit{ScienceDirect} para assim obter acesso aos conteúdos mais conceituados sobre o assunto em estudo.
+
+% \begin{figure}[!h]
+% \centering 
+% \caption{Mapa mental de expressões relevantes para pesquisa}
+% \includegraphics[scale=0.8]{imagens/mapamental.png}
+% \legend{Fonte: O Autor}
+% \label{fig:mapamentalautor}
+% \end{figure}
+% \section{Considerações Finais}
