@@ -37,7 +37,7 @@ Após a coleta e armazenagem dos dados, é necessário a remoção de informaç�
 
 A seguir serão apresentadas as principais técnicas de pré-processamento textual conforme levantado pelos autores \citeonline{SYMEONIDIS2018298} sendo apresentadas em ordem de importância para um melhor resultado, tendo ganho de performance já que é possível a execução em paralelo entre as combinações de algumas técnicas.Também são citados alguns trabalhos que tratam cada uma das técnicas descritas.
 
-\begin{enumerate}[label=\Alph*]
+\begin{itemize}
 \item Remoção de \textit{unicode} e ruídos: Como nem todos os \textit{datasets} tem um tratamento prévio disponibilizado pelas ferramentas de coleta, é necessário um primeiro tratamento do seu conteúdo. Essa tarefa consiste em remover códigos \textit{unicode}\footnote{ Padrão internacional de códigos que permite que qualquer computador seja capaz de interpretar qualquer sistema de escrita\cite{0321480910}.} indesejados   como "\textbackslash u002c" e "\textbackslash x06". Essa é a primeira tarefa e também o ponto de partida para as demais tarefas de pré-processamento \cite{SYMEONIDIS2018298}.
 
 \item Substituição de \textit{URL} e menções de usuários: A maioria dos conteúdos textuais em redes sociais contém \textit{URLs}, menções de usuário e \textit{tags} (sendo chamadas no \textit{Twitter} de \textit{hashtag}). Como esses conteúdos não apresentam nenhum conteúdo semântico e não expressam nenhum sentimento essa etapa tem por objetivo a remoção total ou substituição por um \textit{token} universal dentro do universo possível \cite{Khan2014}.
@@ -66,7 +66,7 @@ A seguir serão apresentadas as principais técnicas de pré-processamento textu
 \item Lematização: Talvez uma das etapas mais complexas apresentadas nesse trabalho, tem por objetivo a busca dos lemas das palavras, isto é, fazer a análise morfológica das palavras em busca da remoção dos lexemas. Muitas literaturas não usam essa etapa pois a mesma é complexa e seu uso pode impactar na performance do pré-processamento \cite{Guzman2014}.
 
 \item \textit{Stemming}: consiste na separação das palavras em \textit{radical} + \textit{terminação} para a análise apenas do radical das mesmas. Esse procedimento pode resultar em maior peso para o termo em posterior análise \cite{Porter1980}.
-\end{enumerate}
+\end{itemize}
 
 Após o pré-processamento, os dados estarão mais consistentes e padronizados, contendo as informações mais relevantes para a avaliação do conhecimento. Existem algumas tratativas específicas para \textit{emojis} e símbolos que também demonstram sentimento. Os mesmos não serão abordados no trabalho por ser de baixa relevância na pesquisa.
 
@@ -197,6 +197,7 @@ Também é o caso do \textit{Snapchat}, em que a companhia se intitula como uma 
 O foco do trabalho desenvolvido é em redes sociais com conteúdo textual, como é o exemplo do \textit{Facebook} e o \textit{Twitter} já que serão utilizados os métodos de pré-processamento abordados na sub-sessão \ref{subsec:preproc} afim de melhorar a detecção de sentimentos. Dessa forma redes sociais com conteúdo de imagem como é caso do \textit{Instagram} podem ser avaliadas por trabalhos futuros com outras abordagens de pré-processamento e detecção de sentimentos.
 
 \section{Revisão de Ferramenta Implementada}
+\label{sec:revisaoferramenta}
 Com o crescimento das pesquisas no campo da mineração de texto e com as variadas aplicações encontradas para a análise de sentimentos, cada vez mais ferramentas são desenvolvidas com os mais variados propósitos de pesquisa e também para aplicações comerciais. A ferramenta base para o trabalho aqui desenvolvido é resultado de uma pesquisa realizada por \citeonline{tccfilipe} que resultou em um software \textit{web crawler}\footnote{ \textit{Softwares} que criam conexão com determinado \textit{site} e extraem informações desejadas por meio de APIs geralmente disponibilizadas pelo meio eletrônico.} que realiza a análise de sentimentos em uma interface relativamente simples para usuários que não têm experiência em programação.
 
 É possível verificar na Figura \ref{fig:fluxotccfilipe} o fluxo de funcionalidades da ferramenta implementada onde, inicialmente, o usuário entra com uma URL de busca e a quantidade de postagens a ser analisada (Figura \ref{fig:menutccfilipe}) e após ocorre a classificação e por fim ocorre a apresentação das informações em forma de nuvem de palavras (Figura \ref{fig:nuvemtccfilipe}), gráficos (Figura \ref{fig:graficotccfilipe}), e ainda, em relatórios gerados em PDF (Figura \ref{fig:exportadotccfilipe}). A coleta de dados ocorreu com a API apresentada na sub-sessão \ref{subsec:coletadados} chamada \textit{Facebook Graph API}, a partir dela o \textit{software} faz buscas na rede social \textit{Facebook} e coleta postagens conforme parametrizado.
