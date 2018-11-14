@@ -101,7 +101,7 @@ O algoritmo é considerado ingênuo (\textit{naive}) por assumir que cada atribu
 
 \begin{figure}[!h]
 \centering 
-\caption{Modelo Naive Bayes}
+\caption{Modelo \textit{Naive Bayes}}
 \includegraphics[scale=0.70]{imagens/modeloNaiveBayes.png}
 \legend{Fonte: O autor baseado em \citeauthor{schmitt2013analise}}
 \label{fig:ModeloNaiveBayes}
@@ -111,7 +111,7 @@ O algoritmo pode ser usado de forma incremental conforme a necessidade de sua re
 
 \subsubsubsection {Métodos Não-Supervisionados} 
 
-São tidos como métodos não-supervisionados aqueles que o próprio algoritmo - sem o auxilio de aprendizado a partir de treinamento - determina as características do texto. Um exemplo é a clusterização de textos onde o software analisa um conteúdo textual encontrando, independentemente, grupos de palavras com similaridade entre elas. Essa abordagem é baseada em três etapas principais: a medida de proximidade, estratégia de agrupamento e seleção de descritores.
+São tidos como métodos não-supervisionados aqueles que o próprio algoritmo - sem o auxilio de aprendizado a partir de treinamento - determina as características do texto. Um exemplo é a clusterização de textos onde o \textit{software} analisa um conteúdo textual encontrando, independentemente, grupos de palavras com similaridade entre elas. Essa abordagem é baseada em três etapas principais: a medida de proximidade, estratégia de agrupamento e seleção de descritores.
 
 Na etapa de medida de proximidade verifica-se a similaridade entre os textos, dependendo da abordagem também é válido buscar a dissimilaridade entre os textos. Os dois métodos mais conhecidos para a obtenção dessa medida de proximidade para dados do tipo texto são os métodos: Cosseno e Jaccard. Para a execução de ambos os métodos é necessário considerar dois vetores documentos $x_{i}=\left ( x_{i1}, x_{i2}, \dotsc, x_{im}\right )$ e $x_{j}=\left ( x_{j1}, x_{j2}, \dotsc, x_{jm}\right )$ onde cada termo da coleção é representado em uma das dimensões dos vetores \cite{Rezende2011}.
 
@@ -162,7 +162,7 @@ Já na AS baseada em corpo é comumente utilizada quando quando se quer encontra
 
 \section{Redes Sociais}
 \label{sec:RedesSociais}
-Desde o princípio, a humanidade tem a necessidade de conviver em comunidade, sendo necessário a vida em conjunto na realização de trabalhos como também para a formação de famílias e grupos. Esses grupos eram formados conforme afinidades políticas, religiosas, étnicas, profissionais e etc, trazendo como resultado o constante desenvolvimento social e e intelectual do homem até os dias atuais \cite{KHALED2018}. Com o desenvolvimento da internet esse comportamento também foi replicado para a rede em plataformas denominadas \textit{Online Social Network} (OSN), também chamadas de Redes Sociais, que segundo \citeonline{N2018777} vão além de plataformas de comunicação e troca de informações, mas também chegam a impactar no crescimento econômico. 
+Desde o princípio, a humanidade tem a necessidade de conviver em comunidade, sendo necessário a vida em conjunto na realização de trabalhos como também para a formação de famílias e grupos. Esses grupos eram formados conforme afinidades políticas, religiosas, étnicas, profissionais e etc, trazendo como resultado o constante desenvolvimento social e e intelectual do homem até os dias atuais \cite{KHALED2018}. Com o desenvolvimento da \textit{internet} esse comportamento também foi replicado para a rede em plataformas denominadas \textit{Online Social Network} (OSN), também chamadas de Redes Sociais, que segundo \citeonline{N2018777} vão além de plataformas de comunicação e troca de informações, mas também chegam a impactar no crescimento econômico. 
 
 São exemplos de redes sociais o \textit{Facebook}\footnote{https://www.facebook.com}, o \textit{Twitter}\footnote{https://twitter.com} e o \textit{Instagram}\footnote{https://www.instagram.com} sendo todos baseados na cocriação com o usuário, isto é, ele que gera o conteúdo das plataformas através dos seus \textit{posts}, as conexões através das solicitações de conexão com outro usuário, comunidades através de páginas de afinidade e grupos, e sinaliza possíveis melhorias para as plataformas seguirem em contínua evolução atraindo mais usuários a cada ano como pode ser visto na Tabela \ref{tab:qtdusers} a quantidade de usuários em Agosto de 2018 nas redes sociais.
 
@@ -233,7 +233,7 @@ São ataques realizados com base no sexo ou gênero da vítima. As vitimas desse
 
 Tanto as mulheres como os muçulmanos são os maiores alvos de discurso de ódio. Como consequência dessa violência e assédio muitas mulheres se inserem em organizações terroristas, onde as mulheres mais jovens são empregadas como domésticas prestando serviços domésticos e também serviços sexuais aos integrantes dessas organizações. \cite{Edwards2016}. Muitas mulheres se casam com os homens terroristas como forma de retribuição aos serviços prestados. Já outras são abusadas sexualmente por vários integrantes gerando outro crime grave de abuso sexual que não será abordado nesse trabalho \cite{Edwards2016}.
 
-A alta no número de usuários das redes sociais enfraqueceu as leis desenvolvidas para governar e controlar a \textit{Internet}. Muitas ativistas feministas também são alvos de discurso de ódio em meios \textit{online} conforme estudo de 
+A alta no número de usuários das redes sociais enfraqueceu as leis desenvolvidas para governar e controlar a \textit{internet}. Muitas ativistas feministas também são alvos de discurso de ódio em meios \textit{online} conforme estudo de 
 \citeonline{Hardaker2016}. Como solução para esses assédios que incluem ameaças de estupro cotra as ativistas muitas abordagens são adaptadas conforme situação para rumar a uma igualdade jurídica \cite{Levy2017}. 
 
 \subsection{Discurso de Ódio de Religião}
@@ -314,7 +314,7 @@ Com uma base composta por $10.336$ comentários oriundos de $115$ notícias, os 
 
 Para realizar a classificação da base rotulada, \citeonline{Pelle2017} utilizaram o \textit{software} \textit{Weka} e testaram os algoritmos \textit{Naive Bayes} e \textit{SVM} (sendo chamado de \textit{SMO} na implementação do \textit{Weka}) por serem amplamente usados em rotinas de mineração de textos \cite{Pelle2017}. 
 
-Ao final concluiu-se que de fato existem poucas literaturas que abordam o discurso de ódio na \textit{Internet} analisando a língua portuguesa e que, para os próximos estudos, é possível realizar um estudo com maior carga de dados rotulados utilizando métodos de \textit{crowdsourcing}, também é visto a possibilidade de mapear o usuário gerador de discursos de ódio para que se saiba o perfil desses usuários \cite{Pelle2017}.
+Ao final concluiu-se que de fato existem poucas literaturas que abordam o discurso de ódio na \textit{internet} analisando a língua portuguesa e que, para os próximos estudos, é possível realizar um estudo com maior carga de dados rotulados utilizando métodos de \textit{crowdsourcing}, também é visto a possibilidade de mapear o usuário gerador de discursos de ódio para que se saiba o perfil desses usuários \cite{Pelle2017}.
 
 \section{Considerações Finais}
 A Análise de Sentimentos (SA), é a classificação de um dado textual baseado no seu teor sentimental, de opinião, avaliação de atitudes e é amplamente utilizada para a avaliação de determinadas entidades como eventos, produtos, problemas sociais, entre outros. Essa técnica é cada vez mais necessária, uma vez que atualmente se torna inviável a análise manual realizada por especialistas humanos, pois a cada dia, milhões de novos textos são gerados na \textit{internet} \cite{BAHRI2018669}.

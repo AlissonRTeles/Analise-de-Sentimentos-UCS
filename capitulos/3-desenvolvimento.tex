@@ -64,7 +64,7 @@ Nessa etapa os textos poderão ser classificados entre duas categorias: \textit{
 \end{figure}
 \newpage
 
-Com essa etapa pretende-se montar uma base de dados que posteriormente será pré-processada para remoção de ruídos e que irá compor o \textit{dataset} para treinamento dentro do \textit{software weka}. Por isso, é importante que os textos sigam a seguinte formatação: "classificador, racista (true, false), religioso (true, false), incapacidade (true, false), gênero (false),'texto coletado'" como forma de padronização de dados a serem classificados de forma automática como é exemplificado na Figura \ref{fig:arqanalise} onde pode ser verificado um primeiro texto onde um discurso de ódio foi detectado e sub categorizado como ódio a um gênero e já no segundo texto nada foi percebido e portanto o mesmo foi classificado como neutro.
+Com essa etapa pretende-se montar uma base de dados que posteriormente será pré-processada para remoção de ruídos e que irá compor o \textit{dataset} para treinamento dentro do \textit{software Weka}. Por isso, é importante que os textos sigam a seguinte formatação: "classificador, racista (true, false), religioso (true, false), incapacidade (true, false), gênero (false),'texto coletado'" como forma de padronização de dados a serem classificados de forma automática como é exemplificado na Figura \ref{fig:arqanalise} onde pode ser verificado um primeiro texto onde um discurso de ódio foi detectado e sub categorizado como ódio a um gênero e já no segundo texto nada foi percebido e portanto o mesmo foi classificado como neutro.
 
 \begin{figure}[!h]
 \centering 
@@ -97,7 +97,7 @@ Essa etapa pretende executar três algoritmos de classificação automática de 
 
 \begin{figure}[!h]
 \centering 
-\caption{Diagrama da etapa de classificação com o \textit{software} \textit{weka}}
+\caption{Diagrama da etapa de classificação com o \textit{software} \textit{Weka}}
 \includegraphics[scale=0.50]{imagens/wekaclassificacao.png}
 \legend{Fonte: O Autor}
 \label{fig:wekaclassificacao}
@@ -105,7 +105,7 @@ Essa etapa pretende executar três algoritmos de classificação automática de 
 
 \section{Revisão de Ferramenta Implementada}
 \label{sec:revisaoferramenta}
-Com o crescimento das pesquisas no campo da mineração de texto e com as variadas aplicações encontradas para a análise de sentimentos, cada vez mais ferramentas são desenvolvidas com os mais variados propósitos de pesquisa e também para aplicações comerciais. A ferramenta base para o trabalho aqui desenvolvido é resultado de uma pesquisa realizada por \citeonline{tccfilipe} que resultou em um software \textit{web crawler}\footnote{ \textit{Softwares} que criam conexão com determinado \textit{site} e extraem informações desejadas por meio de APIs geralmente disponibilizadas pelo meio eletrônico.} que realiza a análise de sentimentos em uma interface relativamente simples para usuários que não têm experiência em programação.
+Com o crescimento das pesquisas no campo da mineração de texto e com as variadas aplicações encontradas para a análise de sentimentos, cada vez mais ferramentas são desenvolvidas com os mais variados propósitos de pesquisa e também para aplicações comerciais. A ferramenta base para o trabalho aqui desenvolvido é resultado de uma pesquisa realizada por \citeonline{tccfilipe} que resultou em um \textit{software} \textit{web crawler}\footnote{ \textit{Softwares} que criam conexão com determinado \textit{site} e extraem informações desejadas por meio de APIs geralmente disponibilizadas pelo meio eletrônico.} que realiza a análise de sentimentos em uma interface relativamente simples para usuários que não têm experiência em programação.
 
 É possível verificar na Figura \ref{fig:fluxotccfilipe} o fluxo de funcionalidades da ferramenta implementada onde, inicialmente, o usuário entra com uma URL de busca e a quantidade de postagens a ser analisada (Figura \ref{fig:menutccfilipe}) e após ocorre a classificação e por fim ocorre a apresentação das informações em forma de nuvem de palavras (Figura \ref{fig:nuvemtccfilipe}), gráficos (Figura \ref{fig:graficotccfilipe}), e ainda, em relatórios gerados em PDF (Figura \ref{fig:exportadotccfilipe}). A coleta de dados ocorreu com a API apresentada na sub-sessão \ref{subsec:coletadados} chamada \textit{Facebook Graph API}, a partir dela o \textit{software} faz buscas na rede social \textit{Facebook} e coleta postagens conforme parametrizado.
 
