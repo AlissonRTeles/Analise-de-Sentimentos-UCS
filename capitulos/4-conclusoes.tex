@@ -4,7 +4,46 @@ Nesse capítulo serão apresentadas as conclusões obtidas na fase de desenvolvi
 
 \section{Síntese}
 \label{sec:sintese}
-Este trabalho apresentou um breve histórico sobre as redes sociais
+
+Esse trabalho apresentou as principais etapas necessárias para a análise de sentimentos. Métodos de coleta de dados, pré-processamento e classificação automática dos dados, abordando os algoritmos e técnicas mais utilizadas nas literaturas recentes sobre o tema.
+
+Também foi apresentado breve histórico sobre as redes sociais, o número de usuários e também os tipos de dados que cada uma das ferramentas aceitam. Para o trabalho desenvolvido foi escolhida a rede social \textit{Twitter} por ter textos sintetizados de até $240$ caracteres e porque a mesma tem uma grande quantidade de usuários no mundo todo.
+
+Com os trabalhos relacionados foi possível verificar a importância de se desenvolver um dicionário de léxicos na língua portuguesa para casos de discurso de ódio já que é um problema presente na \textit{Internet} e me que poucos governos punem os \textit{haters} que o praticam.
+
+O trabalho desenvolverá um dicionário de palavras da língua portuguesa utilizadas em discursos de ódio, coletando dados da rede social \textit{Twitter} e realizando o pré-processamento para diminuição de ruídos, e após, classificando com o \textit{software} \textit{Weka} usando os algoritmos \textit{Naive Bayes}, \textit{Bayse Net} e \textit{SVM}, escolhendo o de melhor acurácia conforme classificação manual realizada por especialista humano.
+
+Ao final, será integrada essa nova funcionalidade em um \textit{software} desenvolvido por \citeonline{tccfilipe} em seu Trabalho de Conclusão de Curso. Testes de acurácia serão igualmente realizados para verificar se ferramenta é capaz de identificar discursos de ódio na língua portuguesa e ainda, dizer se é um discurso de ódio contra raça, gênero, deficiência ou religião já que essas são as principais categorias de discurso de ódio segundo estudo realizado por \citeonline{Chetty2018}.
 
 \section{Cronograma para TCC II}
 \label{sec:cronograma}
+
+O cronograma do trabalho encontra-se na Tabela \ref{tab-cronograma}, onde as etapas são:
+
+\begin{enumerate}
+\item Coleta de dados no \textit{Twitter};
+\item Montagem de base rotulada com especialista humano;
+\item Aplicação de algoritmos de pré-processamento;
+\item Aplicação de algoritmos de \textit{machine learning} no \textit{Weka} (NB, BN, SVM);
+\item Geração de base de léxicos em português;
+\item Testes com resultados;
+\item Contribuições e Trabalhos Futuros;
+
+\end{enumerate}
+
+\begin{table}[h!]\begin{center}
+	\caption{Cronograma}\label{tab-cronograma}
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} c c c c c c c}
+		\toprule
+		& Etapa & mar. & abr. & maio & jun. & jul. &\\
+		\midrule
+		&   1   &   X  &      &      &      &      &\\
+		&   2   &   X  &   X  &      &      &      &\\
+		&   3   &      &   X  &      &      &      &\\
+		&   4   &      &   X  &   X  &      &      &\\
+		&   5   &      &      &   X  &      &      &\\
+		&   6   &      &      &   X  &      &      &\\
+		&   6   &      &      &      &  X   &  X   &\\
+		\bottomrule                             
+	\end{tabular*}
+\end{center}\end{table}
