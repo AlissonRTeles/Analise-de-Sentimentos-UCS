@@ -1,13 +1,9 @@
-\chapter{Referencial Teórico}
+\chapter{Análise de Sentimentos}
 \label{cap:REFERENCIAL}
-No capitulo que segue será descrito o referencial teórico que serve de base para o desenvolvimento do estudo, além de trabalhos relacionados a área de análise de sentimentos e suas contribuições.
-% falar de cada sessao criada nesse capitulo como guia
 
-\section{Análise de Sentimentos}
+A análise de sentimentos, ou ainda mineração de opiniões, é uma subárea da mineração de textos que analisa atitudes e emoções expressas de forma textual. Ainda, segundo \citeonline{BAHRI2018669}, a análise de sentimentos tem por objetivo a classificação de um dado textual baseado no seu teor sentimental, de opinião, de avaliação e de atitudes, sendo útil na avaliação de determinadas entidades que podem ser eventos, produtos, problemas, entre outros. 
 
-A análise de sentimentos ou ainda, mineração de opinião é uma subárea da mineração de textos que analisa atitudes e emoções das pessoas sobre determinado tema. Ainda, segundo \citeonline{BAHRI2018669}, a análise de sentimentos tem por objetivo a classificação de um dado textual baseado no seu teor sentimental, de opinião, de avaliação e de atitudes, sendo útil na avaliação de determinadas entidades que podem ser eventos, produtos, problemas e etc. 
-
-Tendo em vista o crescimento do número de usuários nas redes sociais, consequentemente o número de produções textuais nesses canais, e o interesse de grandes empresas em obter pesquisas de opinião de forma não invasiva e barata, ficou evidente que a analise de sentimento de forma manual realizada por especialistas tornou-se inviável sendo necessário o uso de recursos computacionais unidos a algoritmos sofisticados realizando analises em grande escala em menor tempo.
+Tendo em vista o crescimento do número de usuários nas redes sociais, consequentemente o número de produções textuais nesses canais aumentou. Em razão disso, o interesse de grandes empresas em obter pesquisas de opinião a partir de publicações em redes sociais, ficou evidente. A análise de sentimentos, quando realizada de forma manual por especialistas, é inviável sendo necessário o uso de recursos computacionais unidos a algoritmos sofisticados realizando análises em grande escala (\textit{big data}) em menor tempo.
 % falar sobre a procura pelas
 
 \section{Etapas da Análise de Sentimentos}
@@ -24,7 +20,7 @@ Geralmente as APIs são \textit{web services} (produtos disponibilizados na inte
 
 \begin{figure}[!h]
 \centering 
-\caption{Tela do \textit{Graph API Explorer}}
+\caption{Tela do \textit{Graph API explorer}}
 \includegraphics[scale=0.35]{imagens/graphapiexplorer.png}
 \legend{Fonte: Facebook}
 \label{fig:GraphAPIExplorer}
@@ -77,7 +73,7 @@ A seguir serão apresentados os principais métodos abordados nas literaturas re
 
 \begin{figure}[!h]
 \centering 
-\caption{Métodos de Classificação de SA}
+\caption{Métodos de classificação de análise de sentimentos}
 \includegraphics[scale=0.70]{imagens/sentimentanalysismethods.png}
 \legend{Fonte: \citeauthor{CHANDRAPANDEY2017764}}
 \label{fig:SAMethods}
@@ -87,7 +83,6 @@ A seguir serão apresentados os principais métodos abordados nas literaturas re
 \subsubsection{Método baseado em Aprendizado de Máquina}
 
 Nessa abordagem a classificação dos dados ocorre com o auxilio de algoritmos de \textit{machine learning} como rede neural, algoritmo \textit{Naive-Bayes}, K-means e etc, podendo ser um algoritmo supervisionado, ou ainda, não-supervisionado. A seguir uma descrição e exemplos de cada abordagem.
-
 
 \subsubsubsection{Métodos Supervisionados}
 
@@ -174,7 +169,7 @@ São exemplos de redes sociais o \textit{Facebook}\footnote{https://www.facebook
 
 \begin{table}[h]
 \centering
-\caption{Quantidade de Usuários nas Redes Sociais}
+\caption{Quantidade de usuários nas redes sociais}
 \label{tab:qtdusers}
 \begin{tabular}{|l|c|}
 \hline
@@ -196,105 +191,138 @@ Também é o caso do \textit{Snapchat}, em que a companhia se intitula como uma 
 
 O foco do trabalho desenvolvido é em redes sociais com conteúdo textual, como é o exemplo do \textit{Facebook} e o \textit{Twitter} já que serão utilizados os métodos de pré-processamento abordados na sub-sessão \ref{subsec:preproc} afim de melhorar a detecção de sentimentos. Dessa forma redes sociais com conteúdo de imagem como é caso do \textit{Instagram} podem ser avaliadas por trabalhos futuros com outras abordagens de pré-processamento e detecção de sentimentos.
 
-\section{Revisão de Ferramenta Implementada}
-\label{sec:revisaoferramenta}
-Com o crescimento das pesquisas no campo da mineração de texto e com as variadas aplicações encontradas para a análise de sentimentos, cada vez mais ferramentas são desenvolvidas com os mais variados propósitos de pesquisa e também para aplicações comerciais. A ferramenta base para o trabalho aqui desenvolvido é resultado de uma pesquisa realizada por \citeonline{tccfilipe} que resultou em um software \textit{web crawler}\footnote{ \textit{Softwares} que criam conexão com determinado \textit{site} e extraem informações desejadas por meio de APIs geralmente disponibilizadas pelo meio eletrônico.} que realiza a análise de sentimentos em uma interface relativamente simples para usuários que não têm experiência em programação.
+\section{Discurso de Ódio nas Redes Sociais}
+Como foi visto na Sessão \ref{sec:RedesSociais}, é cada vez maior a quantidade de informações geradas diariamente dentro das redes sociais. É também inquestionável a liberdade que as redes sociais trazem para seus usuários que podem expressar suas opiniões sobre os mais variados assuntos já que as plataformas permitem o compartilhamento de ideias entre usuários e entre comunidades de assuntos em comum. 
 
-É possível verificar na Figura \ref{fig:fluxotccfilipe} o fluxo de funcionalidades da ferramenta implementada onde, inicialmente, o usuário entra com uma URL de busca e a quantidade de postagens a ser analisada (Figura \ref{fig:menutccfilipe}) e após ocorre a classificação e por fim ocorre a apresentação das informações em forma de nuvem de palavras (Figura \ref{fig:nuvemtccfilipe}), gráficos (Figura \ref{fig:graficotccfilipe}), e ainda, em relatórios gerados em PDF (Figura \ref{fig:exportadotccfilipe}). A coleta de dados ocorreu com a API apresentada na sub-sessão \ref{subsec:coletadados} chamada \textit{Facebook Graph API}, a partir dela o \textit{software} faz buscas na rede social \textit{Facebook} e coleta postagens conforme parametrizado.
+A liberdade de expressão acaba sendo necessária para que se mantenha os direitos (democráticos) dos indivíduos, proporcionando a troca de opiniões e o prazer autônomo. A mesma liberdade de expressão pode ser uma das causas da ocorrência de discursos de ódio sendo então eles  considerados descendentes da própria liberdade de expressão \cite{Chetty2018}.
 
-\newpage
+Expressar o discurso de ódio tornou-se tendência pois o mesmo resulta em popularidade instantânea. O discurso de Ódio viola os direitos fundamentais de um ser humano sendo que o objetivo mais amplo da liberdade de expressão é alcançar a auto-realização e estabelecer um equilíbrio aceitável entre estabilidade e mudanças sociais sendo possível por meio da comunicação livre \cite{Chetty2018}.
 
-\begin{figure}[!h]
-\centering 
-\caption{Fluxograma de funcionalidades do software revisado}
-\includegraphics[scale=0.46]{imagens/fluxofilipe.png}
-\legend{Fonte: \citeauthor{tccfilipe}}
-\label{fig:fluxotccfilipe}
-\end{figure}
+O discurso de ódio pode prejudicar as vitimas de forma direta ou de forma indireta. Quando prejudica diretamente, as vítimas são imediatamente feridas pelo conteúdo do discurso. Já no discurso indireto de ódio, o dano pode ser imediato ou não, o dano retardado é gerado pelos agentes e não por um ator principal \cite{Seglow2016}. 
+
+A Figura \ref{fig:atividadesdestrutivas} apresenta alguns tipos de atividades destrutivas encontradas atualmente nas redes sociais. O discurso de ódio se dá em postagens, re-postagens e em respostas nas redes sociais. O crime de ódio é um ataque físico motivado por ódio onde as redes sociais são usadas como ferramentas para planejar e executar as atividades de ódio. As atividades de extremismo e de terrorismo usam a rede social para como ferramenta de comunicação e de recrutamento, espalhar propagandas, planejar e executar os ataques  \cite{Chetty2018}.
 
 \begin{figure}[!h]
 \centering 
-\caption{Menu de busca do software revisado}
-\includegraphics[scale=0.5]{imagens/menudebuscafilipe.png}
-\legend{Fonte: \citeauthor{tccfilipe}}
-\label{fig:menutccfilipe}
+\caption{Tipos de atividades destrutivas nas redes sociais}
+\includegraphics[scale=0.70]{imagens/atividadesdestrutivas.png}
+\legend{Fonte:\cite{Chetty2018}}
+\label{fig:atividadesdestrutivas}
 \end{figure}
+
+O terrorismo é um fenômeno global que resulta na morte de pessoas inocentes e na destruição de propriedades públicas em uma escala gigantesca. Os dois objetivos principais do terrorismo são criar o terror propriamente dito para as vítimas e atrair a atenção das mídias e dos poderes mundiais. O terrorismo é uma ameaça que não distingue raça, religião, nacionalidade e nem gênero, atingindo toda a humanidade \cite{Chetty2018}.
+
+O extremismo é uma ideologia político-religiosa se opondo ás normas da sociedade sendo muito semelhante ao terrorismo. Para \citeonline{Liebman1983}, o extremismo é "um desejo de ampliar o escopo, o detalhamento e o rigor da lei religiosa, o isolamento social e a rejeição da cultura periférica." \cite{Liebman1983,Chetty2018}. Muitas vezes, tanto o extremismo como o terrorismo lavam ao discurso de ódio e ao crime de ódio.
+
+O crime de ódio é todo ataque físico motivado por ódio contra um indivíduo, propriedade ou comunidade sendo essas violências motivadas pela oposição a religião, ao gênero, a raça, a etnia e a nação. Os crimes de ódio geralmente é um tipo de crime extremista e punível pela lei constitucional de cada país diferentemente do discurso de ódio que é um tipo de ataque verbal e de difícil punição \cite{Chetty2018}.
+
+O discurso de ódio tem como alvo grupos de minorias sendo mais destrutivo e perigoso quando atinge um símbolo tradicional, evento ou atividade. Os discursos que falam da nação, raça, etnia, religião, orientação sexual gênero e deficiência geram maiores danos ao indivíduo do que características individuais da vítima. Sendo assim \citeonline{Chetty2018} definem o discurso de ódio como "qualquer fala que ataca um indivíduo ou um grupo com a intenção de ferir ou desrespeitar com base na identidade de uma pessoa" \cite{Chetty2018}.
+
+Um discurso de ódio que não incite a violência e a discriminação também é considerado como prejudicial e, portanto, continua sendo considerado como discurso de ódio já que proposito e ação do autor podem descrever o ato de ódio indireto. A Figura \ref{fig:tiposdediscursodeodio} apresenta os principais temas abordados nos discursos de ódio atualmente dentro das redes sociais.
 
 \begin{figure}[!h]
 \centering 
-\caption{Nuvem de palavras do software revisado}
-\includegraphics[scale=0.62]{imagens/nuvemdepalavras.png}
-\legend{Fonte: \citeauthor{tccfilipe}}
-\label{fig:nuvemtccfilipe}
+\caption{Tipos de discurso de ódio}
+\includegraphics[scale=0.70]{imagens/tiposdediscursodeodio.png}
+\legend{Fonte: O Autor}
+\label{fig:tiposdediscursodeodio}
 \end{figure}
 
-\begin{figure}[!h]
-\centering 
-\caption{Gráfico de sentimentos do software revisado}
-\includegraphics[scale=0.8]{imagens/graficodesentimentosfilipe.png}
-\legend{Fonte: \citeauthor{tccfilipe}}
-\label{fig:graficotccfilipe}
-\end{figure}
+\subsection{Discurso de Ódio de Gênero}
+São ataques realizados com base no sexo ou gênero da vítima. As vitimas desse tipo de discurso geralmente são mulheres e garotas, são discursos que denigrem a identidade feminina e que podem acarretar em problemas sociais graves. Esses discursos de ódio também são conhecidos como discurso de ódio sexista e crescem a cada dia devido a facilidade de acesso à \textit{internet} tornando essas agressões mais simples \cite{Chetty2018}.
 
-\begin{figure}[!h]
-\centering 
-\caption{Resultado exportado do software revisado}
-\includegraphics[scale=0.60]{imagens/exportadofilipe.png}
-\legend{Fonte: \citeauthor{tccfilipe}}
-\label{fig:exportadotccfilipe}
-\end{figure}
+Tanto as mulheres como os muçulmanos são os maiores alvos de discurso de ódio. Como consequência dessa violência e assédio muitas mulheres se inserem em organizações terroristas, onde as mulheres mais jovens são empregadas como domésticas prestando serviços domésticos e também serviços sexuais aos integrantes dessas organizações. \cite{Edwards2016}. Muitas mulheres se casam com os homens terroristas como forma de retribuição aos serviços prestados. Já outras são abusadas sexualmente por vários integrantes gerando outro crime grave de abuso sexual que não será abordado nesse trabalho \cite{Edwards2016}.
 
-\newpage
-Para atingir o propósito de sua pesquisa, \citeauthor{tccfilipe} realizou o estudo de léxicos de emoções contidos na base de dados chamada \textit{WordNet}\footnote{https://wordnet.princeton.edu} categorizados em seis grupos distintos que foram: alegria, desgosto, medo, raiva, surpresa e tristeza. Na Tabela \ref{tab:categoriaemo} estão alguns exemplos de palavras separadas pelas respectivas categorias de emoção selecionado pelo autor. Além da análise de sentimentos também foi implementada busca por palavras frequentemente encontradas em ataques de \textit{phishing},  e também palavras de linguagem imprópria, visto que as redes sociais não mantém um filtro de conteúdo levando em consideração a idade do usuário.
+A alta no número de usuários das redes sociais enfraqueceu as leis desenvolvidas para governar e controlar a \textit{Internet}. Muitas ativistas feministas também são alvos de discurso de ódio em meios \textit{online} conforme estudo de 
+\citeonline{Hardaker2016}. Como solução para esses assédios que incluem ameaças de estupro cotra as ativistas muitas abordagens são adaptadas conforme situação para rumar a uma igualdade jurídica \cite{Levy2017}. 
+
+\subsection{Discurso de Ódio de Religião}
+Esse tipo de ataque é contra religiões como o islamismo, o hindu, e o cristianismo. Como a religião é coletiva, os discursos de ódio são muito mais prejudiciais do que para um único indivíduo. Os muçulmanos são demonizados com atitudes negativas, estereótipos, discriminação e ataques físicos \cite{Chetty2018}. Uma das razões para esses atos de violência é a inclusão dos muçulmanos em grupos extremistas externos e homogêneos envolvidos em conflitos e violência \cite{Trnberg2016}.  
+
+A roupa que um indivíduo veste pode fornecer algumas informações incompletas sobre o mesmo. Muitos indivíduos atribuem o \textit{hijab}\footnote{\textit{Hijab} é o conjunto de vestimentas preconizado pela doutrina islâmica. No Islã, o \textit{hijab} é o vestuário que permite a privacidade, a modéstia e a moralidade, ou ainda "o véu que separa o homem de Deus". \cite{9780742562967}} aos mesmos grupos extremistas terroristas sem ter o conhecimento prévio sobre a religião. Houve um aumento considerável na disseminação de discursos de ódio de religião contra muçulmanos após ataques terroristas em Paris, Tunísia e Woolwich. Além dos ataques verbais, mesquitas foram vandalizadas, \textit{hijabs} foram queimados, torturas físicas em homens e propriedades muçulmanas foram destruídas \cite{Awan2016,Chetty2018}.
+
+No meio digital os assédios acontecem por meio de intimação, incitação e ameaças que indicam as violência citadas no parágrafo anterior. Por causa desse comportamento, muitos muçulmanos, por medo de receberem violência gratuita, se retiraram das redes sociais como forma de proteção \cite{Chetty2018}.
+
+\subsection{Discurso de Ódio de Raça}
+Esse tipo de violência diz respeito a qualquer expressão em relação à aparência de uma pessoa ou de um grupo. A frequência bem como o impacto dos discursos de ódio racistas depende da intenção e da percepção do governo da nação em que o evento ocorre, variando de liderança para liderança. Segundo \citeonline{tatum2001defining}, "o racismo é um sistema que envolve mensagens culturais e políticas e práticas institucionais, bem como as crenças e ações dos indivíduos" \cite{tatum2001defining}.
+
+As redes sociais tem papel significativo na disseminação do racismo e hoje são a fonte para a compreensão do mesmo. Elas fornecem um contexto para aprender, desafiar e abordar as questões relacionadas ao racismo.  \cite{Chetty2018}. Um exemplo claro foi apresentado por \citeonline{Chaudhry2016} em seu estudo que mostrou que após a morte de um jovem negro Mike Brown, morto por um tiro dado por Darren Wilson, a maioria dos \textit{tweets} que falavam sobre o tema eram de pessoas negras \cite{Chaudhry2016}.
+
+\subsection{Discurso de Ódio de Deficiência}
+
+Esse tipo de violência é realizado quando condições físicas e mentais de uma pessoa, ou grupo são ridicularizadas. A deficiência é considerada uma categoria social, como é o caso do gênero e da raça de um indivíduo. Incapacidade é qualquer problema de saúde de um indivíduo que o limite na realização das atividades de sua vida. As pessoas sem deficiência são consideradas temporariamente sãs \cite{doi:10.1086/ahr/108.3.763}. Por causa da sua fragilidade, o discurso de ódio de deficiência é mais comum do que para as pessoas saudáveis \cite{Chetty2018}. Mulheres com eficiência intelectual são mais vulneráveis à violência em casa \cite{McCarthy2017}. 
+
+Mesmo sendo grande o número de deficientes vítimas de discurso de ódio, os mecanismos de defesa para esse grupo de indivíduos é menor e muitas vezes inexistentes. Para manter a dignidade dessas pessoas, os governos locais são obrigados a ter sistemas adequados de informação e punição dos crimes \cite{Macdonald2017}.
+
+O crime de mate é um ato contra pessoas com deficiência que é realizado pelos amigos, parentes, ou familiares da própria vítima e é mais semelhante à violência doméstica e necessitam ser punidos como qualquer outro tipo de discurso de ódio \cite{Chetty2018}. 
+
+\section{Trabalhos Relacionados}
+A quantidade de trabalhos que tratam da análise de sentimentos é cada vez maior, já que têm o objetivo de estimar o sentimento envolvido em grandes quantidades de dados. O objetivo dessa sessão é apresentar os principais estudos já desenvolvidos, que possuam algum ponto em comum com o objetivos aqui apresentados. Sendo assim, ao final será possível verificar as diferentes implementações e resultados encontrados para auxiliar no desenvolvimento do trabalho.
+
+\subsection{Análise dos sentimentos expressos na rede social \textit{Twitter} em relação aos filmes indicados ao \textit{Oscar} 2017}
+
+O trabalho realizado por \cite{Correa2017} abordou os conceitos de análise de sentimentos aplicados à rede social \textit{Twitter}, analisando as reações dos usuários em relação aos filmes indicados à categoria de "Melhor Filme" do \textit{Oscar 2017} já que as redes sociais são espaços que possibilitam a divulgação de filmes e também é utilizada como fonte de opiniões. 
+
+Após realizar a etapa de coleta de informação, \cite{Correa2017} gerou uma base de dados rotulada manualmente distribuída conforme a Tabela \ref{tab:sumarizacaocorrea}. Com a base rotulada já obtida, o autor realizou etapas de pré-processamento para diminuir ruídos de dados removendo \textit{links}, caracteres não alfabéticos e pontuação, removendo repetição de letras e etc.
 
 \begin{table}[h!]
   \begin{center}
-    \caption{Categorias de emoções}
-    \label{tab:categoriaemo}
-    \begin{tabular}{ll} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
-      \textbf{Categoria} & \textbf{Palavras}\\
+    \caption{Sumarização dos dados contidos em base rotulada}
+    \label{tab:sumarizacaocorrea}
+    
+    \begin{tabular}{cc} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      \textbf{Sentimento} & \textbf{Quantidade de \textit{tweets}}\\
       \hline
-      Alegria&animação, ânimo, comédia\\
-      Desgosto&maldoso, chatear, abominável\\
-      Medo&desespero, escuridão, friamente\\
-      Raiva&assassinar, bravejar, detestar\\
-      Surpresa&chocante, espanto, impressionado\\
-      Tristeza&cabisbaixo, chorão, culpa\\
+       positivo&1444\\
+       negativo&1362\\
+       neutro&429\\
       \hline
+      Total&3235
     \end{tabular}
   \end{center}
-  \legend{Fonte: \citeauthor{tccfilipe}}
-\end{table}
-Após definir os grupos de coleta, os dados de coleta para a análise de sentimentos e realizar a classificação dos dados utilizando método de classificação baseado em léxicos, o autor realizou a análise dos resultados para constatar o quão precisa foi a classificação realizada pela ferramenta. \citeauthor{tccfilipe} coletou amostras de diferentes tamanhos em todos os grupos analisados totalizando 50 (cinquenta), 100 (cem) e 500 (quinhentos) postagens para, após, serem também analisadas manualmente e assim comparar os resultados. Dentre os grupos estudados estão a página do \textit{Outback Brasil} e o grupo da Previdência Social, alguns ajustes de léxicos foram necessários para que as classificações ocorressem com maior assertividade nos casos de alegria e tristeza. No final foi realizada a comparação entre as classificações e exatificadas as suas respectivas taxas de acerto, a Tabela \ref{tab:taxaacerto} apresenta os resultados obtidos, com eles foi possível verificar que quatro dos sentimentos tiveram taxa de acerto superiores a oitenta por cento. Com o cálculo do desvio padrão foi possível constatar que nos sentimentos com menor classificação refletiam uma grande dispersão em torno da media populacional, resultado de expressões ambíguas e de duplo sentido.
-
-\begin{table}[h!]
-  \begin{center}
-    \caption{Taxa média de acerto na classificação de postagens analisadas}
-    \label{tab:taxaacerto}
-    \begin{tabular}{lllllll} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
-      \textbf{Classificação} & \textbf{Alegria} & \textbf{Medo} & \textbf{Tristeza} & \textbf{Desgosto} & \textbf{Raiva} & \textbf{Surpresa}\\
-      \hline
-      Taxa de Acerto&52,82\%&90,77\%&81,55\%&88,89\%&91,01\%&75,83\%\\
-      Desvio Padrão($\sigma$)&16,06&2,62&5,20&4,61&4,23&9,97\\
-      \hline
-    \end{tabular}
-  \end{center}
-  \legend{Fonte: \citeauthor{tccfilipe}}
+  \legend{Fonte: \citeauthor{Correa2017}}
 \end{table}
 
-Ao final dos estudos foi concluído que a ferramenta desenvolvida trouxe resultados satisfatórios tanto pelos resultados obtidos como pela facilidade que a ferramenta desenvolvida trás para os usuários comuns. Ainda, foram apontadas melhorias para os estudos futuros entre elas o desenvolvimento de uma plataforma \textit{web}, aprimoramento nos testes de resultados da análise de sentimentos e também novas abordagens na etapa de classificação dos dados. 
 
-% falar aqui sobre os resultados encontrados pelo filipe
-% \section{Estado da Arte da Análise de Sentimentos}
-% Nessa sub-sessão será apresentado o estado da arte da Análise de Sentimentos 
+Diferentes abordagens de classificação foram apresentadas pelo autor. Desde algoritmos de aprendizado supervisionado (\textit{Naive Bayes}) até o aprendizado por supervisão à distância (utilizando a ferramenta \textit{Sentiment140}\footnote{http://www.sentiment140.com/}). Para o desenvolvimento foi utilizado o algoritmo \textit{Naive Bayes} por ser o mais utilizado em casos de bases rotuladas, aplicando a base rotulada no \textit{software Weka} \cite{Correa2017}. 
 
-% Para realizar a pesquisa do estado da arte da análise de sentimentos baseada em emoções nas redes sociais foi utilizado a plataforma de pesquisa desenvolvida pela editora \textit{Elsevier} chamada de \textit{ScienceDirect} para assim obter acesso aos conteúdos mais conceituados sobre o assunto em estudo.
+O autor concluiu que o nível de acurácia apresentada pela classificação de base de dados rotulada apresentada pelo algoritmo \textit{Naive Bayes} multinomial foi de $75\%$, sendo bastante indicado para tarefas semelhantes. Também foi possível concluir que parte considerável dos usuários do \textit{Twitter} prefere usar a ferramenta para publicar comentários positivos sobre os filmes, já que os mesmos permaneceram ativos e animados na rede social durante a semana em que foram divulgados os indicados ao \textit{Oscar 2017} \cite{Correa2017}.
 
-% \begin{figure}[!h]
-% \centering 
-% \caption{Mapa mental de expressões relevantes para pesquisa}
-% \includegraphics[scale=0.8]{imagens/mapamental.png}
-% \legend{Fonte: O Autor}
-% \label{fig:mapamentalautor}
-% \end{figure}
-% \section{Considerações Finais}
+Para os próximos trabalhos, dentre as demais sugestões do autor está o estudo dos perfis de usuários considerando apenas os \textit{tweets} publicados pelos usuários do perfil desejado. Também é sugerido realizar estudos utilizando uma base de dados composta por \textit{tweets} publicados após o \textit{Oscar} gerando tabela comparativa \cite{Correa2017}.
+
+\subsection{\textit{Locate the Hate: Detecting Tweets against Blacks}}
+
+Nesse trabalho, \cite{kwok2013locate} realizam estudo sobre o discurso de ódio contra os negros usuários do \textit{Twitter}, onde são especialmente penais dentro da comunidade da plataforma em questão embora esse efeito não seja percebido em meio aos dados gerados diariamente dentro da plataforma.
+
+Para realizar o desenvolvimento, os autores coletaram uma centena de \textit{tweets} que continham palavras-chave geralmente encontrados em discursos de ódio, e pediram a três estudantes de diferentes etnias (de mesma idade e sexo) para avaliarem cada um dos textos com uma nota de 1 (um) à 5 (cinco) conforme o grau de ofensa que o estudante julgasse ter o texto. O resultado foi de $33\%$ de concordância entre os estudantes mostrando que utilizar a abordagem estatistica \textit{Fleiss' Kappa} seria ainda de menor precisao se realizado por uma máquina \cite{kwok2013locate}.
+
+Para realizar a classificação dos dados previamente rotulados entre dados racistas e dados não racistas, foi utilizado o algoritmo de \textit{Naive Bayes} já que o mesmo, segundo os autores, funciona tão bem quanto os algoritmos mais sofisticados.
+
+Os \textit{tweets} racistas foram coletados a partir de contas que foram auto-classificadas como racistas ou consideradas racistas por meio de notícias. Os autores chegaram em uma base rotulada de $24.582$ \textit{tweets} pré-processados, onde as \textit{URL} foram removidas, as palavras foram padronizadas em letras minúsculas, palavras irrelevantes foram removidas, a grafia de palavras de insulto foram substituídas pelo seu equivalente soletrado corretamente \cite{kwok2013locate}.
+
+Após a classificação os autores concluíram que termos como \textit{niggers} e \textit{nig-er} são padrão para insultar negros, enquanto as palavras \textit{niggas} e \textit{nigga} se limitam à fala informal geralmente utilizada pela comunidade negra. Esses termos não têm conotação racial porém o uso é restrito a negros e a pessoas aprovadas pela comunidade negra \cite{kwok2013locate}.
+
+Por fim, \citeonline{kwok2013locate} concluem que a base de dados apurada por eles não foi suficiente para classificar com total precisão os \textit{tweets} de origem racista e afirmam que esse desafio deve ser a motivação para que novas pesquisas ocorram e que novos refinamentos ocorram nos métodos de classificação apresentados pelos seu trabalho.
+
+\subsection{\textit{Offensive Comments in the Brazilian Web: a dataset and baseline results}}
+
+Em seu trabalho, \cite{Pelle2017} constatam que as redes sociais são ferramentas que trazem a liberdade para o usuário poder apresentar suas ideias e compartilhar informações. Entretanto, percebem que essa mesma ferramenta está cheia de usuários que promovem o discurso de ódio. A análise desses eventos é inviável de forma manual uma vez que a cada dia muito mais textos são gerados.
+
+É nesse contexto que \cite{Pelle2017} verificam a necessidade de uma ferramenta que realize essa análise de forma automática e propõem o desenvolvimento da mesma para a língua portuguesa, já que atualmente existem poucas abordagens específicas para o idioma. Para realizar o experimento, os autores desenvolveram uma base de dados rotulada especifica para a língua portuguesa, buscando por discursos de ódio dentro do site \textit{g1.globo.com}\footnote{ Classificado como o site mais acessado no Brasil em 2017, pelo site  http://www.alexa.com/topsites/countries/BR} e classificando os comentários entre discursos negativos e discursos positivos. Com essa coleta, constatou-se que $90\%$ das notícias publicadas no site tinham ao menos um discurso de ódio em seus comentários e após uma análise preliminar foi descoberto que as categorias com a maior parte de discursos de ódio foram \textit{política} e \textit{esportes}.
+
+Com uma base composta por $10.336$ comentários oriundos de $115$ notícias, os autores escolheram $1.250$ comentários de forma aleatória para serem rotuladas por três pessoas que julgavam os texto e, em caso de detectarem um texto ofensivo, os juízes deveriam ainda categorizar a ofensa como omo racismo, sexismo, homofobia, xenofobia, intolerância religiosa ou xingamento \cite{Pelle2017}. 
+
+Para realizar a classificação da base rotulada, \cite{Pelle2017} utilizaram o \textit{software} \textit{Weka} e testaram os algoritmos \textit{Naive Bayes} e \textit{SVM} (sendo chamado de \textit{SMO} na implementação do \textit{Weka}) por serem amplamente usados em rotinas de mineração de textos \cite{Pelle2017}. 
+
+Ao final concluiu-se que de fato existem poucas literaturas que abordam o discurso de ódio na \textit{Internet} analisando a língua portuguesa e que, para os próximos estudos, é possível realizar um estudo com maior carga de dados rotulados utilizando métodos de \textit{crowdsourcing}, também é visto a possibilidade de mapear o usuário gerador de discursos de ódio para que se saiba o perfil desses usuários \cite{Pelle2017}.
+
+\section{Considerações Finais}
+A Análise de Sentimentos (SA), é a classificação de um dado textual baseado no seu teor sentimental, de opinião, avaliação de atitudes e é amplamente utilizada para a avaliação de determinadas entidades como eventos, produtos, problemas sociais, entre outros. Essa técnica é cada vez mais necessária, uma vez que atualmente se torna inviável a análise manual realizada por especialistas humanos, pois a cada dia, milhões de novos textos são gerados na \textit{internet} \cite{BAHRI2018669}.
+
+Com o avanço tecnológico, a forma de o seres-humanos compartilharem informações também mudou e hoje as rede sociais vão além de plataformas de comunicação e troca de informações, mas conseguem até impactar no crescimento econômico de uma nação. \textit{Facebook}, \textit{Twitter}, \textit{Youtube} são exemplos de redes sociais que estão entre as mais utilizadas pela humanidade atualmente, seja para troca de fotos, videos, seja para o compartilhamento livre de opiniões e cultura. Porém, essa liberdade de expressão também trouxe um fenômeno negativo para a população, os discursos de ódio praticados pelos \textit{haters} de \textit{internet} que tem o mesmo poder destrutivo que as agressões físicas e verbais \textit{offline}. 
+
+Foi visto, em um estudo realizado por \citeonline{Chetty2018}, que os discursos de ódio são geralmente categorizados entre quatro principais temas que são: gênero, religião, raça e deficiência. Sendo puníveis, dependendo do governo atuante de cada nação. No estudo realizado por \citeonline{Chetty2018} também foi possível verificar que os maiores alvos de discurso de ódio são os muçulmanos, enquanto os maiores alvos de violência física são as mulheres com deficiência física, ou deficiência intelectual.
+
+Com os trabalhos relacionados foi possível perceber que a análise de sentimentos é uma área amplamente necessária. Nos estudos realizados por \citeonline{Correa2017} foi possível perceber os métodos de classificação mais utilizados e também a importância de uma base de dados rotulada para aprendizado de máquina, o contexto de \textit{Oscar} fomentou a pesquisa para buscar a opinião dos usuários sobre os filmes em destaque. Já no trabalho desenvolvido por \citeonline{kwok2013locate} foi possível perceber a necessidade da análise de sentimentos em desafios sociais, mais especificamente o racismo. Em seu trabalho os autores buscaram montar uma análise de sentimentos que detectava discursos de ódio específicos para a comunidade negra americana e foi de suma importância para o objetivo do nosso trabalho de buscar discursos de ódio na rede social \textit{Twitter}. Por fim, com os estudos realizados por \citeonline{Pelle2017} foi possível afirmar que de fato, hoje existem poucas literaturas voltadas para o discurso de ódio na língua portuguesa, também é difícil encontrar ferramentas e bases de dados para o idioma, o que fomenta o desafio para a comunidade cientifica brasileira.
+
+É com essas conclusões que o trabalho de gerar uma base de léxicos para discursos de ódio específico para a língua portuguesa se mostra ser importante para a comunidade. O desafio se mostra necessário para que se possa detectar discursos de ódio que a cada dia aumentam em nossa sociedade. 
