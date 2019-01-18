@@ -1,14 +1,14 @@
 \chapter{Análise de Sentimentos}
 \label{cap:REFERENCIAL}
 
-A análise de sentimentos, ou ainda mineração de opiniões, é uma subárea da mineração de textos que analisa atitudes e emoções expressas de forma textual. Ainda, segundo \citeonline{BAHRI2018669}, a análise de sentimentos tem por objetivo a classificação de um dado textual baseado no seu teor sentimental, de opinião, de avaliação e de atitudes, sendo útil na avaliação de determinadas entidades que podem ser eventos, produtos, problemas, entre outros. 
+A Análise de Sentimentos, ou ainda mineração de opiniões, é uma subárea da mineração de textos que analisa atitudes e emoções expressas de forma textual. Segundo \citeonline{BAHRI2018669}, a Análise de Sentimentos tem por objetivo a classificação de um dado textual baseado no seu teor sentimental, de opinião, de avaliação e de atitudes, sendo útil na avaliação de determinadas entidades que podem ser eventos, produtos, problemas, entre outros. 
 
-Tendo em vista o crescimento do número de usuários nas redes sociais, consequentemente o número de produções textuais nesses canais aumentou. Em razão disso, o interesse de grandes empresas em obter pesquisas de opinião a partir de publicações em redes sociais, ficou evidente. A análise de sentimentos, quando realizada de forma manual por especialistas, é inviável, sendo necessário o uso de recursos computacionais unidos a algoritmos sofisticados realizando análises em grande escala (\textit{big data}) em menor tempo \cite{BAHRI2018669}.
+Tendo em vista o crescimento do número de usuários nas redes sociais, consequentemente o número de produções textuais nesses canais aumentou. Em razão disso, o interesse de grandes empresas em obter pesquisas de opinião a partir de publicações em redes sociais, ficou evidente. A Análise de Sentimentos, quando realizada de forma manual por especialistas, é inviável, sendo necessário o uso de recursos computacionais unidos a algoritmos sofisticados realizando análises em grande escala (\textit{big data}) em menor tempo \cite{BAHRI2018669}.
 % falar sobre a procura pelas
 
 \section{Etapas da Análise de Sentimentos}
 
-Serão apresentadas as etapas principais para o processo de análise de sentimentos realizada de forma automática usando recursos computacionais para a sua execução e tendo como dados a serem analisados textos não estrututados.
+O processo de Análise de Sentimentos compreende diversas etapas para que, de forma automática, dados textuais sejam avaliados em termos de sentimentos expressos neles. O processo é composto pelas etapas que são descritas nas seções seguintes.  
 
 \subsection{Coleta de Dados}
 \label{subsec:coletadados}
@@ -22,7 +22,7 @@ Geralmente as APIs são \textit{web services} (produtos disponibilizados na \tex
 \centering 
 \caption{Tela do \textit{Graph API explorer}}
 \includegraphics[scale=0.35]{imagens/graphapiexplorer.png}
-\legend{Fonte: Facebook}
+\legend{Fonte: Facebook (2018)}
 \label{fig:GraphAPIExplorer}
 \end{figure}
 
@@ -36,7 +36,7 @@ A seguir serão apresentadas as principais técnicas de pré-processamento textu
 \begin{itemize}
 \item Remoção de \textit{unicode} e ruídos: Como nem todos os \textit{datasets} tem um tratamento prévio disponibilizado pelas ferramentas de coleta, é necessário um primeiro tratamento do seu conteúdo. Essa tarefa consiste em remover códigos \textit{unicode}\footnote{ Padrão internacional de códigos que permite que qualquer computador seja capaz de interpretar qualquer sistema de escrita \cite{0321480910}.} indesejados   como "\textbackslash u002c" e "\textbackslash x06". Essa é a primeira tarefa e também o ponto de partida para as demais tarefas de pré-processamento \cite{SYMEONIDIS2018298}.
 
-\item Substituição de \textit{URL} e menções de usuários: A maioria dos conteúdos textuais em redes sociais contém \textit{URLs}, menções de usuário e \textit{tags} (sendo chamadas no \textit{Twitter} de \textit{hashtag}). Como esses conteúdos não apresentam nenhum conteúdo semântico e não expressam nenhum sentimento, essa etapa tem por objetivo a remoção total ou substituição por um \textit{token} universal dentro do universo possível \cite{Khan2014}.
+\item Substituição de \textit{URL} e menções de usuários: A maioria dos conteúdos textuais em redes sociais contém URLs, menções de usuário e \textit{tags} (sendo chamadas no \textit{Twitter} de \textit{hashtag}). Como esses conteúdos não apresentam nenhum conteúdo semântico e não expressam nenhum sentimento, essa etapa tem por objetivo a remoção total ou substituição por um \textit{token} universal dentro do universo possível \cite{Khan2014}.
 \label{it:giria}
 
 \item Substituição de abreviaturas e gírias: Os usuários de redes sociais escrevem em linguagem coloquial e é comum o uso de gírias e de abreviação. Nessa etapa é gerada, manualmente, uma lista com as principais abreviaturas e expressões que se deseja detectar e também os termos que devem substituir essas frases. Assim, sempre que alguma frase especificada na lista for detectada, imediatamente será substituída pela frase equivalente \cite{Kouloumpis}.
@@ -51,11 +51,11 @@ A seguir serão apresentadas as principais técnicas de pré-processamento textu
 
 \item Padronização de letras minúsculas: É a etapa mais comum verificada nas literaturas relacionas ao pré-processamento de texto. A etapa tem por objetivo a substituição de todos os caracteres maiúsculos para minúsculos, padronizando o conteúdo e facilitando as próximas etapas de pré-processamento \cite{DBLP:conf/coling/SantosG14}.
 
-\item Remoção de \textit{stopwords}: Por definição, \textit{stopwords} são palavras de baixo peso e desnecessárias na análise de sentimento dos textos, são palavras com alta frequência de apresentação.  As \textit{stopwords} são adicionadas a listas chamadas por \textit{stoplists} previamente definidas conforme a necessidade da aplicação, podendo ser alterada a qualquer momento. Nessa etapa todas as palavras contidas na \textit{stoplist} serão removidas do texto já que não tem nenhuma utilidade na análise de sentimentos.
+\item Remoção de \textit{stopwords}: Por definição, \textit{stopwords} são palavras de baixo peso e desnecessárias na Análise de Sentimento dos textos, são palavras com alta frequência de apresentação.  As \textit{stopwords} são adicionadas a listas chamadas por \textit{stoplists} previamente definidas conforme a necessidade da aplicação, podendo ser alterada a qualquer momento. Nessa etapa todas as palavras contidas na \textit{stoplist} serão removidas do texto já que não tem nenhuma utilidade na Análise de Sentimentos.
 
 \item Substituição de palavras alongadas: As palavras alongadas são palavras escritas incorretamente com a repetição de algumas letras, escritas assim propositalmente para salientar sentimentos do autor. Nessa etapa as palavras alongadas serão encurtadas para sua forma original, perdendo parte do sentimento atribuído já que ocorrem com pouca frequência dentro de um mesmo texto \cite{Mohammad2015}.
 
-\item Correção ortográfica: É comum em textos informais a presença de palavras com erros ortográficos. Nessa etapa é sugerido que, com o auxílio de dicionários externos ocorra uma correção ortográfica das palavras. Após a correção ortográfica a análise de sentimentos se torna mais simples já que as palavras incorretas trazem uma enorme dificuldade na classificação de sentimento das mesmas.
+\item Correção ortográfica: É comum em textos informais a presença de palavras com erros ortográficos. Nessa etapa é sugerido que, com o auxílio de dicionários externos ocorra uma correção ortográfica das palavras. Após a correção ortográfica a Análise de Sentimentos se torna mais simples já que as palavras incorretas trazem uma enorme dificuldade na classificação de sentimento das mesmas.
 
 \item \textit{Part-of-Speech} (POS): Na etapa de POS, ou ainda, marcação de parte da fala, algumas classes de palavras são desconsideradas por não terem sentimentos atribuídos como advérbios, verbos, e etc. Na maioria dos estudos na área de pré-processamento de textos são considerados verbos, advérbios e substantivos, pois esses podem ser considerados na classificação \cite{Barbosa:2010:RSD:1944566.1944571}.
 
@@ -67,15 +67,15 @@ A seguir serão apresentadas as principais técnicas de pré-processamento textu
 Após o pré-processamento, os dados estarão mais consistentes e padronizados, contendo as informações mais relevantes para a avaliação do conhecimento. Existem algumas tratativas específicas para \textit{emojis} e símbolos que também demonstram sentimento. Os mesmos não serão abordados no trabalho por ser de baixa relevância na pesquisa.
 
 \subsection{Classificação dos Dados}
-Após o pré-processamento, a próxima etapa da análise de sentimentos é a classificação dos dados. Atualmente existem vários estudos que buscam encontrar os métodos mais eficientes para a classificação, podendo ser visto na Figura \ref{fig:SAMethods} as principais abordagens para a etapa de classificação dos dados. Sendo que os algoritmos de \textit{machine learning} trazem um grande avanço na assertividade dos resultados da análise de sentimentos. Tradicionalmente os algoritmos de classificação de análise de sentimentos atribuem um sentimento como "positivo", "negativo" e "neutro", existindo algumas abordagens baseadas em análise de emoção que consideram categorias mais amplas baseadas no estudo de \citeonline{Ekman1992} que podem ser: alegria, tristeza, raiva, medo, nojo e surpresa.  
+Após o pré-processamento, a próxima etapa da Análise de Sentimentos é a classificação dos dados. Atualmente existem vários estudos que buscam encontrar os métodos mais eficientes para a classificação, podendo ser visto na Figura \ref{fig:SAMethods} as principais abordagens para a etapa de classificação dos dados. Sendo que os algoritmos de \textit{machine learning} trazem um grande avanço na assertividade dos resultados da Análise de Sentimentos. Tradicionalmente os algoritmos de classificação de Análise de Sentimentos atribuem um sentimento como "positivo", "negativo" e "neutro", existindo algumas abordagens baseadas em análise de emoção que consideram categorias mais amplas baseadas no estudo de \citeonline{Ekman1992} que podem ser: alegria, tristeza, raiva, medo, nojo e surpresa.  
 
 A seguir serão apresentados os principais métodos abordados nas literaturas referenciais que são os métodos baseados em léxico e os baseados em  aprendizado de máquina (\textit{machine learning}).
 
 \begin{figure}[!h]
 \centering 
-\caption{Métodos de classificação de análise de sentimentos}
+\caption{Métodos de classificação de Análise de Sentimentos}
 \includegraphics[scale=0.70]{imagens/sentimentanalysismethods.png}
-\legend{Fonte: \citeauthor{CHANDRAPANDEY2017764}}
+\legend{Fonte: \cite{CHANDRAPANDEY2017764}}
 \label{fig:SAMethods}
 \end{figure}
 \newpage
@@ -103,7 +103,7 @@ O algoritmo é considerado ingênuo (\textit{naive}) por assumir que cada atribu
 \centering 
 \caption{Modelo \textit{Naive Bayes}}
 \includegraphics[scale=0.70]{imagens/modeloNaiveBayes.png}
-\legend{Fonte: O autor baseado em \citeauthor{schmitt2013analise}}
+\legend{Fonte: O autor baseado em \cite{schmitt2013analise}}
 \label{fig:ModeloNaiveBayes}
 \end{figure}
 
@@ -113,7 +113,7 @@ O algoritmo pode ser usado de forma incremental conforme a necessidade de sua re
 
 São tidos como métodos não-supervisionados aqueles que o próprio algoritmo - sem o auxilio de aprendizado a partir de treinamento - determina as características do texto. Um exemplo é a clusterização de textos onde o \textit{software} analisa um conteúdo textual encontrando, independentemente, grupos de palavras com similaridade entre elas. Essa abordagem é baseada em três etapas principais: a medida de proximidade, estratégia de agrupamento e seleção de descritores.
 
-Na etapa de medida de proximidade verifica-se a similaridade entre os textos, dependendo da abordagem também é válido buscar a dissimilaridade entre os textos. Os dois métodos mais conhecidos para a obtenção dessa medida de proximidade para dados do tipo texto são os métodos: Cosseno e Jaccard. Para a execução de ambos os métodos é necessário considerar dois vetores documentos $x_{i}=\left ( x_{i1}, x_{i2}, \dotsc, x_{im}\right )$ e $x_{j}=\left ( x_{j1}, x_{j2}, \dotsc, x_{jm}\right )$ onde cada termo da coleção é representado em uma das dimensões dos vetores \cite{Rezende2011}.
+Na etapa de medida de proximidade verifica-se a similaridade entre os textos, dependendo da abordagem também é válido buscar a dissimilaridade entre os textos. Os dois métodos mais conhecidos para a obtenção dessa medida de proximidade para dados do tipo texto são os métodos: Cosseno e \textit{Jaccard}. Para a execução de ambos os métodos é necessário considerar dois vetores documentos $x_{i}=\left ( x_{i1}, x_{i2}, \dotsc, x_{im}\right )$ e $x_{j}=\left ( x_{j1}, x_{j2}, \dotsc, x_{jm}\right )$ onde cada termo da coleção é representado em uma das dimensões dos vetores \cite{Rezende2011}.
 
 O método do cosseno, expresso na Fórmula \ref{eq:cosseno}, define a semelhança dos termos conforme o ângulo que os vetores formam entre si. Para ângulos próximos de $90^{\circ}$, ou seja, cosseno próximo de 0, os documentos não compartilham nenhum termo. Já para ângulos próximos de $0^{\circ}$, e  cosseno próximo de 1, os documentos têm termos semelhantes \cite{Rezende2011}.
 
@@ -122,7 +122,7 @@ O método do cosseno, expresso na Fórmula \ref{eq:cosseno}, define a semelhanç
      \cos \left ( x_{i},x_{j} \right ) = \frac{\sum_{l=1}^{m} x_{il} x_{jl}}{\sqrt{\sum_{l=1}^{m} x_{il^{2}} \sum_{l=1}^{m} x_{jl^{2}}} }
 \end{equation}
 
-Para as situações em que os vetores são representados por valores binários, indicando presença ou ausência de determinados termos, o cálculo de proximidade pode ser realizado pelo método Jaccard \cite{Rezende2011}.
+Para as situações em que os vetores são representados por valores binários, indicando presença ou ausência de determinados termos, o cálculo de proximidade pode ser realizado pelo método \textit{Jaccard} \cite{Rezende2011}.
 
 Para o cálculo considera-se os mesmos vetores $x_{i}$ e $x_{j}$  considerando também as seguintes contagens:
 
@@ -150,11 +150,11 @@ O \textit{k-means} é baseado na ideia de que um ponto central pode representar 
 
 Como entrada do algoritmo \textit{k-means} tem-se um conjunto de vetores documento e $k$ que é o número referente a quantidade de grupos que se deseja se dividam. A partir daí o algoritmo selecionará $k$ vetores aleatórios como centroides iniciais e repetir o calculo de dissimilaridade de cada vetor para cada centroide e inserir o documento no grupo no qual ele mais se assemelha, após, uma nova centroide será calculada tendo em vista os vetores que foram adicionados a ele. O algoritmo pode assumir duas regras de parada: na primeira, é considerado o número de iterações e na segunda é considerado a situação onde não ocorrem mais alterações nos vetores, ou seja, os vetores não trocarem mais de grupos \cite{Steinbach00acomparison}.
 
-A última etapa dos métodos não-supervisionados é a seleção de descritores para apresentação dos resultados para a próxima etapa da análise de sentimentos. Alguns métodos para a seleção de descritores utilizam o centroide já que ele mantém a característica central de todos os grupos.
+A última etapa dos métodos não-supervisionados é a seleção de descritores para apresentação dos resultados para a próxima etapa da Análise de Sentimentos. Alguns métodos para a seleção de descritores utilizam o centroide já que ele mantém a característica central de todos os grupos.
 
 \subsubsection{Método Baseado em Léxico}
 \label{subsubsec:lexico}
-No método baseado em léxico o sentimento (polaridade) é calculado conforme sua orientação semântica. É necessário definir um dicionário léxico com as polaridades correspondentes de cada palavra que o compõe. Esses dicionários podem ser criados manualmente ou automaticamente usando radicais de palavras e as adicionando a lista conforme apresentado por \citeonline{Taboada}. Primeiro uma lista de adjetivos e suas polaridades correspondentes é desenvolvida e um dicionário é criado. Após, quando um texto for analisado todos os seus adjetivos serão extraídos e arquivados junto de seus valores que podem no final gerar uma polaridade única do texto analisado \cite{Taboada}. Existem duas subclasses principais dentro da abordagem léxica que são: as técnicas de análise de sentimento baseadas em dicionário e as técnicas de análise de sentimento baseada em corpo \cite{LIU2017149}.
+No método baseado em léxico o sentimento (polaridade) é calculado conforme sua orientação semântica. É necessário definir um dicionário léxico com as polaridades correspondentes de cada palavra que o compõe. Esses dicionários podem ser criados manualmente ou automaticamente usando radicais de palavras e as adicionando a lista conforme apresentado por \citeonline{Taboada}. Primeiro uma lista de adjetivos e suas polaridades correspondentes é desenvolvida e um dicionário é criado. Após, quando um texto for analisado todos os seus adjetivos serão extraídos e arquivados junto de seus valores que podem no final gerar uma polaridade única do texto analisado \cite{Taboada}. Existem duas subclasses principais dentro da abordagem léxica que são: as técnicas de Análise de Sentimento baseadas em dicionário e as técnicas de Análise de Sentimento baseada em corpo \cite{LIU2017149}.
 
 Na AS baseada em dicionário o foco principal da técnica é a construção de dicionários de sentimento, onde um pequeno conjunto de palavras e sentimentos é determinado manualmente e após ocorre uma pesquisa dos antônimos e sinônimos nas corporas mais populares como o \textit{WordNet} \cite{Miller:1995:WLD:219717.219748}, \textit{HowNet}, ou ainda \textit{Thesaurus}, fazendo com que novas palavras sejam encontradas e o dicionário aumente consideravelmente. No processo iterativo da técnica é realizado até que nenhuma nova palavra possa ser encontrada resultando em um dicionário de sentimentos \cite{LIU2017149}. 
 
@@ -182,7 +182,7 @@ Reddit       &     330  milhões    \\ \hline
 Pinterest    &     200  milhões    \\ \hline
 Ask.fm       &     160  milhões    \\ \hline
 \end{tabular}
-\legend{Fonte: \citeauthor{kallas_2018}}
+\legend{Fonte: \cite{kallas_2018}}
 \end{table}
 
 Existem redes sociais com o foco em conteúdo visual, que é o caso do \textit{Instagram}, rede social fundada em 6 de Outubro de 2010 por Kevin Systrom (CEO e co-fundador) e Mike Krieger (CTO e co-fundador) que revolucionou a forma de compartilhar fotos. Segundo Kevin Systrom o \textit{Instagram} se tornou o lar das narrativas visuais sendo possível que artistas, músicos, celebridades e qualquer tipo de pessoa compartilhe seus conteúdos \cite{instagram_2018}. A rede social conta com mais de 400 milhões de novas postagens na categoria de \textit{Story} diariamente. 
@@ -206,7 +206,7 @@ A Figura \ref{fig:atividadesdestrutivas} apresenta alguns tipos de atividades de
 \centering 
 \caption{Tipos de atividades destrutivas nas redes sociais}
 \includegraphics[scale=0.70]{imagens/atividadesdestrutivas.png}
-\legend{Fonte:\cite{Chetty2018}}
+\legend{Fonte: \cite{Chetty2018}}
 \label{fig:atividadesdestrutivas}
 \end{figure}
 
@@ -257,11 +257,11 @@ Mesmo sendo grande o número de deficientes vítimas de discurso de ódio, os me
 O crime de mate é um ato contra pessoas com deficiência que é realizado pelos amigos, parentes, ou familiares da própria vítima e é mais semelhante à violência doméstica e necessita ser punido como qualquer outro tipo de discurso de ódio \cite{Chetty2018}. 
 
 \section{Trabalhos Relacionados}
-A quantidade de trabalhos que tratam da análise de sentimentos é cada vez maior, já que têm o objetivo de estimar o sentimento envolvido em grandes quantidades de dados. O objetivo dessa sessão é apresentar os principais estudos já desenvolvidos, que possuam algum ponto em comum com os objetivos aqui apresentados. Sendo assim, ao final será possível verificar as diferentes implementações e resultados encontrados para auxiliar no desenvolvimento do trabalho.
+A quantidade de trabalhos que tratam da Análise de Sentimentos é cada vez maior, já que têm o objetivo de estimar o sentimento envolvido em grandes quantidades de dados. O objetivo dessa sessão é apresentar os principais estudos já desenvolvidos, que possuam algum ponto em comum com os objetivos aqui apresentados. Sendo assim, ao final será possível verificar as diferentes implementações e resultados encontrados para auxiliar no desenvolvimento do trabalho.
 
 \subsection{Análise dos sentimentos expressos na rede social \textit{Twitter} em relação aos filmes indicados ao \textit{Oscar} 2017}
 
-O trabalho realizado por \citeonline{Correa2017} abordou os conceitos da análise de sentimentos aplicados à rede social \textit{Twitter}, analisando as reações dos usuários em relação aos filmes indicados à categoria de "Melhor Filme" do \textit{Oscar 2017} já que as redes sociais são espaços que possibilitam a divulgação de filmes e também são utilizadas como fonte de opiniões. 
+O trabalho realizado por \citeonline{Correa2017} abordou os conceitos da Análise de Sentimentos aplicados à rede social \textit{Twitter}, analisando as reações dos usuários em relação aos filmes indicados à categoria de "Melhor Filme" do \textit{Oscar 2017} já que as redes sociais são espaços que possibilitam a divulgação de filmes e também são utilizadas como fonte de opiniões. 
 
 Após realizar a etapa de coleta de informação, \citeonline{Correa2017} gerou uma base de dados rotulada manualmente, distribuída conforme a Tabela \ref{tab:sumarizacaocorrea}. Com a base rotulada já obtida, o autor realizou etapas de pré-processamento para diminuir ruídos de dados removendo \textit{links}, caracteres não alfabéticos e pontuação, removendo repetição de letras e etc.
 
@@ -280,7 +280,7 @@ Após realizar a etapa de coleta de informação, \citeonline{Correa2017} gerou 
       Total&3.235
     \end{tabular}
   \end{center}
-  \legend{Fonte: \citeauthor{Correa2017}}
+  \legend{Fonte: \cite{Correa2017}}
 \end{table}
 
 
@@ -290,9 +290,9 @@ O autor concluiu que o nível de acurácia apresentada pela classificação de b
 
 Para os próximos trabalhos, dentre as demais sugestões do autor, está o estudo dos perfis de usuários considerando apenas os \textit{tweets} publicados pelos usuários do perfil desejado. Também é sugerido realizar estudos utilizando uma base de dados composta por \textit{tweets} publicados após o \textit{Oscar} gerando tabela comparativa \cite{Correa2017}.
 
-\subsection{\textit{Locate the Hate: Detecting Tweets against Blacks}}
+\subsection{Detecção de Tweets contra Afro-americanos}
 
-Nesse trabalho, \citeonline{kwok2013locate} realizaram estudo sobre o discurso de ódio contra os negros, usuários do \textit{Twitter}, onde são especialmente penais dentro da comunidade da plataforma em questão embora esse efeito não seja percebido em meio aos dados gerados diariamente dentro da plataforma.
+No trabalho proposto por \citeonline{kwok2013locate} tem-se um estudo sobre o discurso de ódio contra os afro-americanos usuários do \textit{Twitter}. Esses discursos de ódio são especialmente penais dentro da rede social em questão, embora esse efeito não seja percebido em meio aos dados gerados diariamente dentro da plataforma.
 
 Para realizar o desenvolvimento, os autores coletaram uma centena de \textit{tweets} que continham palavras-chave geralmente encontrados em discursos de ódio, e pediram a três estudantes de diferentes etnias (de mesma idade e sexo) para avaliarem cada um dos textos com uma nota de 1 (um) à 5 (cinco) conforme o grau de ofensa que o estudante julgasse ter o texto. O resultado foi de $33\%$ de concordância entre os estudantes mostrando que utilizar a abordagem estatística \textit{Fleiss' Kappa} seria ainda de menor precisão se realizado por uma máquina \cite{kwok2013locate}.
 
@@ -304,9 +304,9 @@ Após a classificação, os autores concluíram que termos como \textit{niggers}
 
 Por fim, \citeonline{kwok2013locate} concluem que a base de dados apurada por eles não foi suficiente para classificar com total precisão os \textit{tweets} de origem racista e afirmam que esse desafio deve ser a motivação para que novas pesquisas ocorram e que novos refinamentos ocorram nos métodos de classificação apresentados pelos seu trabalho.
 
-\subsection{\textit{Offensive Comments in the Brazilian Web: a dataset and baseline results}}
+\subsection{Comentários Ofensivos na Internet Brasileira}
 
-Em seu trabalho, \citeonline{Pelle2017} constatam que as redes sociais são ferramentas que trazem a liberdade para o usuário poder apresentar suas ideias e compartilhar informações. Entretanto, percebem que essa mesma ferramenta está cheia de usuários que promovem o discurso de ódio. A análise desses eventos é inviável de forma manual uma vez que a cada dia muito mais textos são gerados.
+Em seu trabalho, \citeonline{Pelle2017} constataram que as redes sociais são ferramentas que trazem a liberdade para o usuário poder apresentar suas ideias e compartilhar informações. Entretanto, percebem que essa mesma ferramenta está cheia de usuários que promovem o discurso de ódio. A análise desses eventos é inviável de forma manual uma vez que a cada dia muito mais textos são gerados.
 
 É nesse contexto que \citeonline{Pelle2017} verificam a necessidade de uma ferramenta que realize essa análise de forma automática e propõem o desenvolvimento da mesma para a língua portuguesa, já que atualmente existem poucas abordagens específicas para o idioma. Para realizar o experimento, os autores desenvolveram uma base de dados rotulada especifica para a língua portuguesa, buscando por discursos de ódio dentro do site \textit{g1.globo.com}\footnote{ Classificado como o site mais acessado no Brasil em 2017, pelo site  \url{http://www.alexa.com/topsites/countries/BR}} (\url{https://g1.globo.com}) e classificando os comentários entre discursos negativos e discursos positivos. Com essa coleta, constatou-se que $90\%$ das notícias publicadas no site tinham ao menos um discurso de ódio em seus comentários e após uma análise preliminar foi descoberto que as categorias com a maior parte de discursos de ódio foram \textit{política} e \textit{esportes}.
 
@@ -319,10 +319,10 @@ Ao final concluiu-se que de fato existem poucas literaturas que abordam o discur
 \section{Considerações Finais}
 A Análise de Sentimentos (SA), é a classificação de um dado textual baseado no seu teor sentimental, de opinião, avaliação de atitudes e é amplamente utilizada para a avaliação de determinadas entidades como eventos, produtos, problemas sociais, entre outros. Essa técnica é cada vez mais necessária, uma vez que atualmente se torna inviável a análise manual realizada por especialistas humanos, pois a cada dia, milhões de novos textos são gerados na \textit{internet} \cite{BAHRI2018669}.
 
-Com o avanço tecnológico, a forma de o seres-humanos compartilharem informações também mudou e hoje as rede sociais vão além de plataformas de comunicação e troca de informações, mas conseguem até impactar no crescimento econômico de uma nação. \textit{Facebook}, \textit{Twitter}, \textit{Youtube} são exemplos de redes sociais que estão entre as mais utilizadas atualmente, seja para troca de fotos e vídeos, seja para o compartilhamento livre de opiniões e cultura. Porém, essa liberdade de expressão também trouxe um fenômeno negativo para a população, os discursos de ódio praticados pelos \textit{haters} de \textit{internet} que tem o mesmo poder destrutivo que as agressões físicas e verbais \textit{offline}. 
+Com o avanço tecnológico, a forma de o seres-humanos compartilharem informações também mudou e hoje as redes sociais vão além de plataformas de comunicação e troca de informações, elas conseguem até impactar no crescimento econômico de uma nação. \textit{Facebook}, \textit{Twitter}, \textit{Youtube} são exemplos de redes sociais que estão entre as mais utilizadas atualmente, seja para troca de fotos e vídeos, seja para o compartilhamento livre de opiniões e cultura. Porém, essa liberdade de expressão também trouxe um fenômeno negativo para a população, os discursos de ódio praticados pelos \textit{haters} de \textit{internet} que tem o mesmo poder destrutivo que as agressões físicas e verbais \textit{offline}. 
 
 Foi visto, em um estudo realizado por \citeonline{Chetty2018}, que os discursos de ódio são geralmente categorizados entre quatro principais temas que são: gênero, religião, raça e deficiência. Sendo puníveis, dependendo do governo atuante de cada nação. No estudo realizado por \citeonline{Chetty2018} também foi possível verificar que os maiores alvos de discurso de ódio são os muçulmanos, enquanto os maiores alvos de violência física são as mulheres com deficiência física, ou deficiência intelectual.
 
-Com os trabalhos relacionados foi possível perceber que a análise de sentimentos é uma área amplamente necessária. Nos estudos realizados por \citeonline{Correa2017} foi possível perceber os métodos de classificação mais utilizados e também a importância de uma base de dados rotulada para aprendizado de máquina, o contexto de \textit{Oscar} fomentou a pesquisa para buscar a opinião dos usuários sobre os filmes em destaque. Já no trabalho desenvolvido por \citeonline{kwok2013locate} foi possível perceber a necessidade da análise de sentimentos em desafios sociais, mais especificamente o racismo. Em seu trabalho os autores buscaram montar uma análise de sentimentos que detectava discursos de ódio específicos para a comunidade negra americana e foi de suma importância para o objetivo do nosso trabalho de buscar discursos de ódio na rede social \textit{Twitter}. Por fim, com os estudos realizados por \citeonline{Pelle2017} foi possível afirmar que, de fato, hoje existem poucas literaturas voltadas para o discurso de ódio na língua portuguesa, também é difícil encontrar ferramentas e bases de dados para o idioma, o que fomenta o desafio para a comunidade cientifica brasileira.
+Com os trabalhos relacionados foi possível perceber que a Análise de Sentimentos é uma área amplamente necessária. Nos estudos realizados por \citeonline{Correa2017} foi possível perceber os métodos de classificação mais utilizados e também a importância de uma base de dados rotulada para aprendizado de máquina, o contexto de \textit{Oscar} fomentou a pesquisa para buscar a opinião dos usuários sobre os filmes em destaque. Já no trabalho desenvolvido por \citeonline{kwok2013locate} foi possível perceber a necessidade da Análise de Sentimentos em desafios sociais, mais especificamente o racismo. Em seu trabalho os autores buscaram montar uma Análise de Sentimentos que detectava discursos de ódio específicos para a comunidade negra americana e foi de suma importância para o objetivo do nosso trabalho de buscar discursos de ódio na rede social \textit{Twitter}. Por fim, com os estudos realizados por \citeonline{Pelle2017} foi possível afirmar que, de fato, hoje existem poucas obras disponíveis voltadas para o discurso de ódio na língua portuguesa. Também é difícil encontrar ferramentas e bases de dados para o idioma, o que fomenta o desafio para a comunidade cientifica brasileira.
 
-É com essas conclusões que o trabalho de gerar uma base de léxicos para discursos de ódio específico para a língua portuguesa se mostra ser importante para a comunidade. O desafio se mostra necessário para que se possa detectar discursos de ódio que a cada dia aumentam em nossa sociedade. 
+É com essas conclusões que o trabalho de gerar uma base de léxicos para discursos de ódio específico para a língua portuguesa se mostra ser importante para a comunidade. O desafio se mostra necessário para que se possa detectar discursos de ódio que a cada dia aumentam em nossa sociedade.
