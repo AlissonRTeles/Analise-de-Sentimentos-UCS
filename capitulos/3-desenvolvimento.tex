@@ -1,6 +1,6 @@
 \chapter{Desenvolvimento}
 \label{cap:Desenvolvimento}
-Nesse capítulo são abordadas todas as etapas, tal como as técnicas utilizadas para atingir o objetivo de compor um dicionário de léxicos da língua portuguesa específico para detecção de discursos de ódio promovido pelos usuários chamados de \textit{haters}. Também é apresentada uma ferramenta que será utilizada como base para as novas funcionalidades e testes com os novos léxicos utilizados. Ao final, também são apresentados os resultados esperados com o desenvolvimento, estimando a eficiência e os avanços da pesquisa realizada. 
+Nesse capítulo são abordadas as etapas para o desenvolvimento do trabalho, tal como as técnicas utilizadas para atingir o objetivo de compor um dicionário de léxicos da língua portuguesa específico para detecção de discursos de ódio promovido pelos usuários chamados de \textit{haters}. Também é apresentada uma ferramenta que será utilizada como base para as novas funcionalidades e testes com os novos léxicos utilizados. Ao final, também são apresentados os resultados esperados com o desenvolvimento, estimando a eficiência e os avanços da pesquisa realizada. 
 
 \section{Geração de \textit{corpus} para Detectar \textit{Haters}}
 \label{sec:geracaohater}
@@ -55,7 +55,7 @@ Após a coleta, os dados serão inseridos em arquivos binários e estarão pront
 \subsection{Classificação Manual dos Dados}
 \label{subsec:classmanual}
 Nessa etapa, com o auxílio de um especialista humano, os textos apurados na etapa de coleta de \textit{tweets} (Sub-sessão \ref{subsec:coletatweets}) passarão por uma classificação manual como pode ser visto na Figura \ref{fig:classificacaotextos}, afim de gerar uma base de dados para posterior aprendizado de máquina e para comparação estatística de resultados. 
-Nessa etapa os textos poderão ser classificados entre duas categorias: \textit{neutro} e \textit{hater}. Onde a primeira categoria compreenderá textos sem nenhum tipo de violência nem extremismo, podendo compreender emoções tanto positivas como negativas. Já a segunda categoria compreenderá textos invasivos, onde a violência verbal seja praticada contra um indivíduo ou um grupo. Dentro desses textos violentos pretende-se também classificar as violências nas subcategorias: racista, religioso, incapacidade e gênero.  
+Nessa etapa os textos poderão ser classificados entre duas categorias: \textit{neutro} e \textit{hater}.Uma primeira categoria compreenderá textos sem nenhum tipo de violência nem extremismo, podendo compreender emoções tanto positivas como negativas. Já a segunda categoria compreenderá textos invasivos, onde a violência verbal seja praticada contra um indivíduo ou um grupo. Dentro desses textos violentos pretende-se também classificar as violências nas subcategorias: racista, religioso, incapacidade e gênero.  
 
 \begin{figure}[!h]
 \centering 
@@ -65,7 +65,7 @@ Nessa etapa os textos poderão ser classificados entre duas categorias: \textit{
 \label{fig:classificacaotextos}
 \end{figure}
 
-Com essa etapa pretende-se montar uma base de dados que posteriormente será pré-processada para remoção de ruídos e que irá compor o \textit{dataset} para treinamento dentro do \textit{software Weka}. Por isso, é importante que os textos sigam a seguinte formatação: "classificador, racista (true, false), religioso (true, false), incapacidade (true, false), gênero (false),'texto coletado'" como forma de padronização de dados a serem classificados de forma automática como é exemplificado na Figura \ref{fig:arqanalise} onde pode ser verificado um primeiro texto onde um discurso de ódio foi detectado e sub categorizado como ódio a um gênero e já no segundo texto nada foi percebido nenhum tipo de discurso de ódio, e portanto, o mesmo foi classificado como neutro.
+Com essa etapa pretende-se montar uma base de dados que posteriormente será pré-processada para remoção de ruídos e que irá compor o \textit{dataset} para treinamento dentro do \textit{software Weka}. Por isso, é importante que os textos sigam a seguinte formatação: "classificador, racista (true, false), religioso (true, false), incapacidade (true, false), gênero (false),'texto coletado'" como forma de padronização de dados a serem classificados de forma automática como é exemplificado na Figura \ref{fig:arqanalise}, onde pode ser verificado um primeiro texto onde um discurso de ódio foi detectado e sub categorizado como ódio a um gênero e já no segundo texto nada foi percebido nenhum tipo de discurso de ódio, e portanto, o mesmo foi classificado como neutro.
 
 \begin{figure}[!h]
 \centering 
@@ -84,7 +84,7 @@ Ao realizar as técnicas citadas anteriormente, será gerado um \textit{dataset}
 
 \subsection{Classificação Automática Utilizando o \textit{Weka} e Geração de \textit{corpus}}
 
-Tendo realizado as etapas anteriores de coleta de \textit{tweets}, de classificação manual e de pré-processamento, o próximo passo será a aplicação de algoritmos de \textit{machine learning} para a classificação automática dos dados apurados nas etapas anteriores. A ferramenta utilizada nessa etapa será o \textit{software} chamado \textit{Weka} \footnote{\url{https://www.cs.waikato.ac.nz/ml/weka/}}(Figura \ref{fig:telaincialweka}) que é uma coleção de algoritmos de \textit{machine learning} utilizados para tarefas de mineração de dados, contendo ferramentas para preparação, classificação, clusterização, entre outros.  Além de ter ferramentas de visualização de resultados. O \textit{Weka} é um \textit{software} \textit{open source} sob a \textit{GNU General Public License}\footnote{\url{https://www.gnu.org/licenses/licenses.html\#GPL}} \cite{weka_2018}.
+Tendo realizado as etapas anteriores de coleta de \textit{tweets}, de classificação manual e de pré-processamento, o próximo passo será a aplicação de algoritmos de \textit{machine learning} para a classificação automática dos dados apurados nas etapas anteriores. A ferramenta utilizada nessa etapa será o \textit{software} chamado \textit{Weka} \footnote{\url{https://www.cs.waikato.ac.nz/ml/weka/}}(Figura \ref{fig:telaincialweka}) que é uma coleção de algoritmos de \textit{machine learning} utilizados para tarefas de mineração de dados, contendo ferramentas para preparação, classificação, clusterização, entre outros, além de ter ferramentas de visualização de resultados. O \textit{Weka} é um \textit{software} \textit{open source} sob a \textit{GNU General Public License}\footnote{\url{https://www.gnu.org/licenses/licenses.html\#GPL}} \cite{weka_2018}.
 
 \begin{figure}[!h]
 \centering 
