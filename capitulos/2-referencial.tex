@@ -22,7 +22,7 @@ Geralmente as APIs são \textit{web services} (produtos disponibilizados na \tex
 \centering 
 \caption{Tela do \textit{Graph API explorer}}
 \includegraphics[scale=0.35]{imagens/graphapiexplorer.png}
-\legend{Fonte: Facebook (2018)}
+\legend{Fonte: (FACEBOOK, 2018)}
 \label{fig:GraphAPIExplorer}
 \end{figure}
 
@@ -31,7 +31,7 @@ Geralmente as APIs são \textit{web services} (produtos disponibilizados na \tex
 
 Após a coleta e armazenagem dos dados, é necessário a remoção de informações desnecessárias, a padronização do formato dos dados obtidos e a apresentação dos dados que serão, posteriormente, processados pelos algoritmos de extração de conhecimento. O pré-processamento inicia com a separação das frases em listas de palavras agora chamadas de \textit{tokens} que serão processadas até transformar o conteúdo inicial em sua forma reduzida e otimizada \cite{SYMEONIDIS2018298}. É importante considerar que as técnicas de pré-processamento são utilizadas conforme a fonte de dados e também dos termos de interesse que serão buscados, assim como o idioma dos textos que se quer analisar. 
 
-A seguir serão apresentadas as principais técnicas de pré-processamento textual conforme levantado pelos autores \citeonline{SYMEONIDIS2018298}, sendo apresentadas em ordem de importância para um melhor resultado, tendo ganho de performance já que é possível a execução em paralelo entre as combinações de algumas técnicas. Também são citados alguns trabalhos que tratam cada uma das técnicas descritas.
+A seguir serão apresentadas as principais técnicas de pré-processamento textual conforme levantado pelos autores \citeonline{SYMEONIDIS2018298}, sendo apresentadas em ordem de importância para um melhor resultado, tendo ganho de performance já que é possível a execução em paralelo entre as combinações de algumas técnicas. Também são citados alguns trabalhos que tratam cada uma das técnicas descritas:
 
 \begin{itemize}
 \item Remoção de \textit{unicode} e ruídos: Como nem todos os \textit{datasets} tem um tratamento prévio disponibilizado pelas ferramentas de coleta, é necessário um primeiro tratamento do seu conteúdo. Essa tarefa consiste em remover códigos \textit{unicode}\footnote{ Padrão internacional de códigos que permite que qualquer computador seja capaz de interpretar qualquer sistema de escrita \cite{0321480910}.} indesejados   como "\textbackslash u002c" e "\textbackslash x06". Essa é a primeira tarefa e também o ponto de partida para as demais tarefas de pré-processamento \cite{SYMEONIDIS2018298}.
@@ -315,6 +315,93 @@ Com uma base composta por $10.336$ comentários oriundos de $115$ notícias, os 
 Para realizar a classificação da base rotulada, \citeonline{Pelle2017} utilizaram o \textit{software} \textit{Weka} e testaram os algoritmos \textit{Naive Bayes} e \textit{SVM} (sendo chamado de \textit{SMO} na implementação do \textit{Weka}) por serem amplamente usados em rotinas de mineração de textos \cite{Pelle2017}. 
 
 Ao final concluiu-se que de fato existem poucas literaturas que abordam o discurso de ódio na \textit{internet} analisando a língua portuguesa e que, para os próximos estudos, é possível realizar um estudo com maior carga de dados rotulados utilizando métodos de \textit{crowdsourcing}, também é visto a possibilidade de mapear o usuário gerador de discursos de ódio para que se saiba o perfil desses usuários \cite{Pelle2017}.
+
+\subsection{Revisão de Ferramenta Implementada}
+\label{sec:revisaoferramenta}
+Com o crescimento das pesquisas no campo da mineração de texto e com as variadas aplicações encontradas para a Análise de Sentimentos, cada vez mais ferramentas são desenvolvidas com os mais variados propósitos de pesquisa, e também para aplicações comerciais. A ferramenta base para o trabalho aqui desenvolvido é resultado de uma pesquisa realizada por \citeonline{tccfilipe} que resultou em um \textit{software} \textit{web crawler}\footnote{ \textit{Softwares} que criam conexão com determinado \textit{site} e extraem informações desejadas por meio de APIs geralmente disponibilizadas pelo meio eletrônico \cite{Kumar2018}.} que realiza a Análise de Sentimentos em uma interface relativamente simples para usuários que não têm experiência em programação.
+
+É possível verificar na Figura \ref{fig:fluxotccfilipe} o fluxo de funcionalidades da ferramenta implementada onde, inicialmente, o usuário entra com uma URL de busca e a quantidade de postagens a ser analisada (Figura \ref{fig:menutccfilipe}) e após ocorre a classificação. Por fim ocorre a apresentação das informações em forma de nuvem de palavras (Figura \ref{fig:nuvemtccfilipe}), gráficos (Figura \ref{fig:graficotccfilipe}), e ainda, em relatórios gerados em PDF (Figura \ref{fig:exportadotccfilipe}). A coleta de dados ocorreu com a API apresentada na Sub-sessão \ref{subsec:coletadados} chamada \textit{Facebook Graph API}, a partir dela o \textit{software} faz buscas na rede social \textit{Facebook} e coleta postagens conforme parametrizado.
+
+\begin{figure}[!h]
+\centering 
+\caption{Fluxograma de funcionalidades do \textit{software} revisado}
+\includegraphics[scale=0.44]{imagens/fluxofilipe.png}
+\legend{Fonte: \cite{tccfilipe}}
+\label{fig:fluxotccfilipe}
+\end{figure}
+
+\begin{figure}[!h]
+\centering 
+\caption{Menu de busca do \textit{software} revisado}
+\includegraphics[scale=0.6]{imagens/menudebuscafilipe.png}
+\legend{Fonte: \cite{tccfilipe}}
+\label{fig:menutccfilipe}
+\end{figure}
+
+\begin{figure}[!h]
+\centering 
+\caption{Nuvem de palavras do \textit{software} revisado}
+\includegraphics[scale=0.62]{imagens/nuvemdepalavras.png}
+\legend{Fonte: \cite{tccfilipe}}
+\label{fig:nuvemtccfilipe}
+\end{figure}
+
+\begin{figure}[!h]
+\centering 
+\caption{Gráfico de sentimentos do \textit{software} revisado}
+\includegraphics[scale=0.8]{imagens/graficodesentimentosfilipe.png}
+\legend{Fonte: \cite{tccfilipe}}
+\label{fig:graficotccfilipe}
+\end{figure}
+
+\begin{figure}[!h]
+\centering 
+\caption{Resultado exportado do \textit{software} revisado}
+\includegraphics[scale=0.60]{imagens/exportadofilipe.png}
+\legend{Fonte: \cite{tccfilipe}}
+\label{fig:exportadotccfilipe}
+\end{figure}
+
+\newpage
+Para atingir o propósito de sua pesquisa, \citeonline{tccfilipe} realizou o estudo de léxicos de emoções contidos na base de dados chamada \textit{WordNet}\footnote{\url{https://wordnet.princeton.edu}} categorizados em seis grupos distintos que foram: alegria, desgosto, medo, raiva, surpresa e tristeza. Na Tabela \ref{tab:categoriaemo} estão alguns exemplos de palavras separadas pelas respectivas categorias de emoção selecionado pelo autor. Além da Análise de Sentimentos também foi implementada busca por palavras frequentemente encontradas em ataques de \textit{phishing},  e também palavras de linguagem imprópria, visto que as redes sociais não mantém um filtro de conteúdo levando em consideração a idade do usuário.
+
+\begin{table}[h!]
+  \begin{center}
+    \caption{Categorias de emoções}
+    \label{tab:categoriaemo}
+    \begin{tabular}{ll} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      \textbf{Categoria} & \textbf{Palavras}\\
+      \hline
+      Alegria&animação, ânimo, comédia\\
+      Desgosto&maldoso, chatear, abominável\\
+      Medo&desespero, escuridão, friamente\\
+      Raiva&assassinar, bravejar, detestar\\
+      Surpresa&chocante, espanto, impressionado\\
+      Tristeza&cabisbaixo, chorão, culpa\\
+      \hline
+    \end{tabular}
+  \end{center}
+  \legend{Fonte: \cite{tccfilipe}}
+\end{table}
+Após definir os grupos de coleta, os dados de coleta para a Análise de Sentimentos e realizar a classificação dos dados utilizando método de classificação baseado em léxicos, o autor realizou a análise dos resultados para constatar o quão precisa foi a classificação realizada pela ferramenta. \citeonline{tccfilipe} coletou amostras de diferentes tamanhos em todos os grupos analisados totalizando 50 (cinquenta), 100 (cem) e 500 (quinhentos) postagens para, após, serem também analisadas manualmente e assim comparar os resultados. Dentre os grupos estudados estão a página do \textit{Outback Brasil} e o grupo da Previdência Social, alguns ajustes de léxicos foram necessários para que as classificações ocorressem com maior assertividade nos casos de alegria e tristeza. No final foi realizada a comparação entre as classificações e exatificadas as suas respectivas taxas de acerto, a Tabela \ref{tab:taxaacerto} apresenta os resultados obtidos, com eles foi possível verificar que quatro dos sentimentos tiveram taxa de acerto superiores a oitenta por cento. Com o cálculo do desvio padrão foi possível constatar que nos sentimentos com menor classificação refletiam uma grande dispersão em torno da media populacional, resultado de expressões ambíguas e de duplo sentido.
+
+\begin{table}[h!]
+  \begin{center}
+    \caption{Taxa média de acerto na classificação de postagens analisadas}
+    \label{tab:taxaacerto}
+    \begin{tabular}{lllllll} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      \textbf{Classificação} & \textbf{Alegria} & \textbf{Medo} & \textbf{Tristeza} & \textbf{Desgosto} & \textbf{Raiva} & \textbf{Surpresa}\\
+      \hline
+      Taxa de Acerto&52,82\%&90,77\%&81,55\%&88,89\%&91,01\%&75,83\%\\
+      Desvio Padrão($\sigma$)&16,06&2,62&5,20&4,61&4,23&9,97\\
+      \hline
+    \end{tabular}
+  \end{center}
+  \legend{Fonte: \cite{tccfilipe}}
+\end{table}
+
+Ao final dos estudos foi concluído que a ferramenta desenvolvida trouxe resultados satisfatórios tanto pelos resultados obtidos como pela facilidade que a ferramenta desenvolvida trás para os usuários comuns. Ainda, foram apontadas melhorias para os estudos futuros entre elas o desenvolvimento de uma plataforma \textit{web}, aprimoramento nos testes de resultados da Análise de Sentimentos e também novas abordagens na etapa de classificação dos dados. 
+% falar aqui sobre os resultados encontrados pelo filipe
 
 \section{Considerações Finais}
 A Análise de Sentimentos (SA), é a classificação de um dado textual baseado no seu teor sentimental, de opinião, avaliação de atitudes e é amplamente utilizada para a avaliação de determinadas entidades como eventos, produtos, problemas sociais, entre outros. Essa técnica é cada vez mais necessária, uma vez que atualmente se torna inviável a análise manual realizada por especialistas humanos, pois a cada dia, milhões de novos textos são gerados na \textit{internet} \cite{BAHRI2018669}.
