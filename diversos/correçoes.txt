@@ -1,0 +1,13 @@
+Título de Trabalho: Detecção de Haters nas Redes Sociais
+Nome do Aluno: Álisson Rodrigues Teles
+
+Lista de correções versão final TCC:
+
+1. Ajuste de referência em figuras e tabelas: Páginas 20, 24, 25, 28, 34, 47,   
+2. Correção ortográfica: Páginas 16, 17, 27, 31, 33, 37 
+3. Adição de complemento textual: Páginas 19, 21, 43
+4. Remoção textual: Páginas 23
+5. Correção pontuações: Páginas 25, 27, 28, 29, 37
+6. Movimentação do capítulo: Movimentado 3.2 (Página 44) para 2.4.4 (Página 36), Revisão de Ferramenta Implementada
+7. Ajuste de Referências: Página 55
+
