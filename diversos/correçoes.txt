@@ -10,5 +10,9 @@ Lista de correções versão final TCC:
 5. Correção pontuações: Páginas 25, 27, 28, 29, 37
 6. Movimentação do capítulo: Movimentado 3.2 (Página 44) para 2.4.4 (Página 36), Revisão de Ferramenta Implementada
 7. Ajuste de Referências: Página 55
-8. Inclusão de Referências: Páginas 22,
+8. Inclusão de Referências: Páginas 15, 22
 9. Ajuste de figuras: Páginas 37, 38, 46
+10. Incluído objetivo específico na página 16
+
+Observação: No TCC II será desenvolvido artigo acadêmico com base na metodologia e implementação desenvolvidas no TCC I.
+
