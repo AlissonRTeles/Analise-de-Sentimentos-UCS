@@ -47,15 +47,15 @@ A seguir serão apresentadas as principais técnicas de pré-processamento textu
 
 \item Remoção de pontuações: Sendo uma técnica muito comum na mineração de texto, essa consiste em remover as pontuações presentes no texto. Muitas literaturas afirmam que uma pontuação exclamativa pode significar um sentimento intenso positivo ou negativo e que sua remoção pode também alterar a acurácia da classificação do texto \cite{Lin2009}.
 
-\item Manipulação de palavras em caixa alta: Palavras escritas em caixa alta são consideradas intensas de emoção. Por isso antes de padronizar todas as letras que compõem o texto para letras minúsculas, as palavras, com mais de duas letras, que forem escritas em caixa alta serão detectadas e sinalizadas para posterior processamento dos algoritmos de classificação .
+\item Manipulação de palavras em caixa alta: Palavras escritas em caixa alta são consideradas intensas de emoção. Por isso antes de padronizar todas as letras que compõem o texto para letras minúsculas, as palavras, com mais de duas letras, que forem escritas em caixa alta serão detectadas e sinalizadas para posterior processamento dos algoritmos de classificação \cite{inproceedings} .
 
 \item Padronização de letras minúsculas: É a etapa mais comum verificada nas literaturas relacionas ao pré-processamento de texto. A etapa tem por objetivo a substituição de todos os caracteres maiúsculos para minúsculos, padronizando o conteúdo e facilitando as próximas etapas de pré-processamento \cite{DBLP:conf/coling/SantosG14}.
 
-\item Remoção de \textit{stopwords}: Por definição, \textit{stopwords} são palavras de baixo peso e desnecessárias na Análise de Sentimento dos textos, são palavras com alta frequência de apresentação.  As \textit{stopwords} são adicionadas a listas chamadas por \textit{stoplists} previamente definidas conforme a necessidade da aplicação, podendo ser alterada a qualquer momento. Nessa etapa todas as palavras contidas na \textit{stoplist} serão removidas do texto já que não tem nenhuma utilidade na Análise de Sentimentos.
+\item Remoção de \textit{stopwords}: Por definição, \textit{stopwords} são palavras de baixo peso e desnecessárias na Análise de Sentimento dos textos, são palavras com alta frequência de apresentação.  As \textit{stopwords} são adicionadas a listas chamadas por \textit{stoplists} previamente definidas conforme a necessidade da aplicação, podendo ser alterada a qualquer momento. Nessa etapa todas as palavras contidas na \textit{stoplist} serão removidas do texto já que não tem nenhuma utilidade na Análise de Sentimentos \cite{Ferilli2014}.
 
 \item Substituição de palavras alongadas: As palavras alongadas são palavras escritas incorretamente com a repetição de algumas letras, escritas assim propositalmente para salientar sentimentos do autor. Nessa etapa as palavras alongadas serão encurtadas para sua forma original, perdendo parte do sentimento atribuído já que ocorrem com pouca frequência dentro de um mesmo texto \cite{Mohammad2015}.
 
-\item Correção ortográfica: É comum em textos informais a presença de palavras com erros ortográficos. Nessa etapa é sugerido que, com o auxílio de dicionários externos ocorra uma correção ortográfica das palavras. Após a correção ortográfica a Análise de Sentimentos se torna mais simples já que as palavras incorretas trazem uma enorme dificuldade na classificação de sentimento das mesmas.
+\item Correção ortográfica: É comum em textos informais a presença de palavras com erros ortográficos. Nessa etapa é sugerido que, com o auxílio de dicionários externos ocorra uma correção ortográfica das palavras. Após a correção ortográfica a Análise de Sentimentos se torna mais simples já que as palavras incorretas trazem uma enorme dificuldade na classificação de sentimento das mesmas \cite{Miller:1995:WLD:219717.219748}.
 
 \item \textit{Part-of-Speech} (POS): Na etapa de POS, ou ainda, marcação de parte da fala, algumas classes de palavras são desconsideradas por não terem sentimentos atribuídos como advérbios, verbos, e etc. Na maioria dos estudos na área de pré-processamento de textos são considerados verbos, advérbios e substantivos, pois esses podem ser considerados na classificação \cite{Barbosa:2010:RSD:1944566.1944571}.
 
@@ -234,7 +234,7 @@ São ataques realizados com base no sexo ou gênero da vítima. As vitimas desse
 Tanto as mulheres como os muçulmanos são os maiores alvos de discurso de ódio. Como consequência dessa violência e assédio muitas mulheres se inserem em organizações terroristas, onde as mulheres mais jovens são empregadas como domésticas, prestando serviços domésticos e também serviços sexuais aos integrantes dessas organizações. \cite{Edwards2016}. Muitas mulheres se casam com os homens terroristas como forma de retribuição aos serviços prestados. Já outras são abusadas sexualmente por vários integrantes gerando outro crime grave de abuso sexual que não será abordado nesse trabalho \cite{Edwards2016}.
 
 A alta no número de usuários das redes sociais enfraqueceu as leis desenvolvidas para governar e controlar a \textit{internet}. Muitas ativistas feministas também são alvos de discurso de ódio em meios \textit{online} conforme estudo de 
-\citeonline{Hardaker2016}. Como solução para esses assédios que incluem ameaças de estupro cotra as ativistas muitas abordagens são adaptadas conforme situação para rumar a uma igualdade jurídica \cite{Levy2017}. 
+\citeonline{Hardaker2016}. Como solução para esses assédios que incluem ameaças de estupro contra as ativistas muitas abordagens são adaptadas conforme situação para rumar a uma igualdade jurídica \cite{Levy2017}. 
 
 \subsection{Discurso de Ódio de Religião}
 Esse tipo de ataque é contra religiões como o islamismo, o hindu, e o cristianismo. Como a religião é coletiva, os discursos de ódio são muito mais prejudiciais do que para um único indivíduo. Os muçulmanos são demonizados com atitudes negativas, estereótipos, discriminação e ataques físicos \cite{Chetty2018}. Uma das razões para esses atos de violência é a inclusão dos muçulmanos em grupos extremistas externos e homogêneos envolvidos em conflitos e violência \cite{Trnberg2016}.  
@@ -325,7 +325,7 @@ Com o crescimento das pesquisas no campo da mineração de texto e com as variad
 \begin{figure}[!h]
 \centering 
 \caption{Fluxograma de funcionalidades do \textit{software} revisado}
-\includegraphics[scale=0.44]{imagens/fluxofilipe.png}
+\includegraphics[scale=0.48,angle=270]{imagens/fluxofilipe.png}
 \legend{Fonte: \cite{tccfilipe}}
 \label{fig:fluxotccfilipe}
 \end{figure}
@@ -341,7 +341,7 @@ Com o crescimento das pesquisas no campo da mineração de texto e com as variad
 \begin{figure}[!h]
 \centering 
 \caption{Nuvem de palavras do \textit{software} revisado}
-\includegraphics[scale=0.62]{imagens/nuvemdepalavras.png}
+\includegraphics[scale=0.5]{imagens/nuvemdepalavras.png}
 \legend{Fonte: \cite{tccfilipe}}
 \label{fig:nuvemtccfilipe}
 \end{figure}
@@ -357,7 +357,7 @@ Com o crescimento das pesquisas no campo da mineração de texto e com as variad
 \begin{figure}[!h]
 \centering 
 \caption{Resultado exportado do \textit{software} revisado}
-\includegraphics[scale=0.60]{imagens/exportadofilipe.png}
+\includegraphics[scale=0.8]{imagens/exportadofilipe.png}
 \legend{Fonte: \cite{tccfilipe}}
 \label{fig:exportadotccfilipe}
 \end{figure}
